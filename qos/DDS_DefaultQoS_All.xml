@@ -36,7 +36,7 @@
           </destination_order>
           <history>
                <kind>KEEP_LAST_HISTORY_QOS</kind>
-               <depth>10</depth>
+               <depth>1000</depth>
           </history>
           <resource_limits>
                <max_samples>LENGTH_UNLIMITED</max_samples>
