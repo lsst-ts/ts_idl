@@ -1,1 +1,1 @@
-# we just need TS_IDL_DIR
+envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
