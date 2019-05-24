@@ -1,0 +1,531 @@
+module ScriptQueue {
+struct command_abort_cd4a0ea2 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_abort_cd4a0ea2 ScriptQueueID
+struct command_add_59b5398b {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	isStandard;
+	  string	path;
+	  string	config;
+	  string	descr;
+	  octet	location;
+	  long	locationSalIndex;
+	};
+#pragma keylist command_add_59b5398b ScriptQueueID
+struct command_disable_20e81aaf {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_disable_20e81aaf ScriptQueueID
+struct command_enable_c229d58e {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_enable_c229d58e ScriptQueueID
+struct command_enterControl_e1822c96 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_enterControl_e1822c96 ScriptQueueID
+struct command_exitControl_1644501a {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_exitControl_1644501a ScriptQueueID
+struct command_move_8f4e7ef0 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	salIndex;
+	  octet	location;
+	  long	locationSalIndex;
+	};
+#pragma keylist command_move_8f4e7ef0 ScriptQueueID
+struct command_pause_56f713a6 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	ignored;
+	};
+#pragma keylist command_pause_56f713a6 ScriptQueueID
+struct command_requeue_cf40f9da {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	salIndex;
+	  octet	location;
+	  long	locationSalIndex;
+	};
+#pragma keylist command_requeue_cf40f9da ScriptQueueID
+struct command_resume_9a0f2053 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	ignored;
+	};
+#pragma keylist command_resume_9a0f2053 ScriptQueueID
+struct command_setLogLevel_e6884daa {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	level;
+	};
+#pragma keylist command_setLogLevel_e6884daa ScriptQueueID
+struct command_setSimulationMode_2bbceb5f {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	mode;
+	};
+#pragma keylist command_setSimulationMode_2bbceb5f ScriptQueueID
+struct command_setValue_d302102a {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string<256>	parametersAndValues;
+	};
+#pragma keylist command_setValue_d302102a ScriptQueueID
+struct command_showAvailableScripts_4e72c2c8 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	ignored;
+	};
+#pragma keylist command_showAvailableScripts_4e72c2c8 ScriptQueueID
+		const long ScriptQueue_shared_Location_First=1;
+		const long ScriptQueue_shared_Location_Last=2;
+		const long ScriptQueue_shared_Location_Before=3;
+		const long ScriptQueue_shared_Location_After=4;
+struct command_showQueue_e64f3b02 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	ignored;
+	};
+#pragma keylist command_showQueue_e64f3b02 ScriptQueueID
+struct command_showScript_258ee5e1 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	salIndex;
+	};
+#pragma keylist command_showScript_258ee5e1 ScriptQueueID
+struct command_standby_3c1cb283 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_standby_3c1cb283 ScriptQueueID
+struct command_start_52583329 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string<256>	settingsToApply;
+	};
+#pragma keylist command_start_52583329 ScriptQueueID
+struct command_stopScripts_140ff3ea {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	length;
+	  long	salIndices[400];
+	  boolean	terminate;
+	};
+#pragma keylist command_stopScripts_140ff3ea ScriptQueueID
+struct exists_45db592c {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	item1;
+	};
+#pragma keylist exists_45db592c ScriptQueueID
+struct logevent_appliedSettingsMatchStart_9ae8fe97 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	appliedSettingsMatchStartIsTrue;
+	  long	priority;
+	};
+#pragma keylist logevent_appliedSettingsMatchStart_9ae8fe97 ScriptQueueID
+struct logevent_availableScripts_199c594c {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string	standard;
+	  string	external;
+	  long	priority;
+	};
+#pragma keylist logevent_availableScripts_199c594c ScriptQueueID
+struct logevent_errorCode_fd6b55aa {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	errorCode;
+	  string	errorReport;
+	  string	traceback;
+	  long	priority;
+	};
+#pragma keylist logevent_errorCode_fd6b55aa ScriptQueueID
+struct logevent_heartbeat_4fcf8575 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	heartbeat;
+	  long	priority;
+	};
+#pragma keylist logevent_heartbeat_4fcf8575 ScriptQueueID
+		const long ScriptQueue_shared_ScriptProcessState_Loading=1;
+		const long ScriptQueue_shared_ScriptProcessState_Configured=2;
+		const long ScriptQueue_shared_ScriptProcessState_Running=3;
+		const long ScriptQueue_shared_ScriptProcessState_Done=4;
+		const long ScriptQueue_shared_ScriptProcessState_LoadFailed=5;
+		const long ScriptQueue_shared_ScriptProcessState_ConfigureFailed=6;
+		const long ScriptQueue_shared_ScriptProcessState_Terminated=7;
+struct logevent_logLevel_0db5f9be {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	level;
+	  long	priority;
+	};
+#pragma keylist logevent_logLevel_0db5f9be ScriptQueueID
+struct logevent_logMessage_9ddc8e29 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	level;
+	  string	message;
+	  string	traceback;
+	  long	priority;
+	};
+#pragma keylist logevent_logMessage_9ddc8e29 ScriptQueueID
+struct logevent_queue_73f790eb {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	enabled;
+	  boolean	running;
+	  long	currentSalIndex;
+	  long	length;
+	  long	salIndices[400];
+	  long	pastLength;
+	  long	pastSalIndices[400];
+	  long	priority;
+	};
+#pragma keylist logevent_queue_73f790eb ScriptQueueID
+struct logevent_rootDirectories_5e209fcd {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string	standard;
+	  string	external;
+	  long	priority;
+	};
+#pragma keylist logevent_rootDirectories_5e209fcd ScriptQueueID
+struct logevent_script_1426844c {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	cmdId;
+	  long	salIndex;
+	  boolean	isStandard;
+	  string	path;
+	  double	timestampProcessStart;
+	  double	timestampConfigureStart;
+	  double	timestampConfigureEnd;
+	  double	timestampRunStart;
+	  double	timestampProcessEnd;
+	  octet	processState;
+	  octet	scriptState;
+	  long	priority;
+	};
+#pragma keylist logevent_script_1426844c ScriptQueueID
+struct logevent_settingVersions_2152a508 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string	recommendedSettingsVersion;
+	  string	recommendedSettingsLabels;
+	  string	settingsUrl;
+	  long	priority;
+	};
+#pragma keylist logevent_settingVersions_2152a508 ScriptQueueID
+struct logevent_simulationMode_5768bee7 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	mode;
+	  long	priority;
+	};
+#pragma keylist logevent_simulationMode_5768bee7 ScriptQueueID
+struct logevent_summaryState_16ec6358 {
+	  long	ScriptQueueID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	summaryState;
+	  long	priority;
+	};
+#pragma keylist logevent_summaryState_16ec6358 ScriptQueueID
+	struct command
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ScriptQueueID;
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string<128>	modifiers;
+	};
+	#pragma keylist command ScriptQueueID
+	struct ackcmd
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ScriptQueueID;
+	  long 		ack;
+	  long 		error;
+	  string<256>	result;
+	};
+	#pragma keylist ackcmd ScriptQueueID
+	struct logevent
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ScriptQueueID;
+	  string<128>	message;
+	};
+	#pragma keylist logevent ScriptQueueID
+};
+

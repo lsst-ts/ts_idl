@@ -1,0 +1,265 @@
+module Script {
+struct command_configure_b6e0f06e {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string	config;
+	};
+#pragma keylist command_configure_b6e0f06e ScriptID
+struct command_resume_efe0ec94 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  octet	ignored;
+	};
+#pragma keylist command_resume_efe0ec94 ScriptID
+struct command_run_2e3a8849 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  octet	ignored;
+	};
+#pragma keylist command_run_2e3a8849 ScriptID
+struct command_setCheckpoints_ed358ca0 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string	pause;
+	  string	stop;
+	};
+#pragma keylist command_setCheckpoints_ed358ca0 ScriptID
+struct command_setLogLevel_281e5c60 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	level;
+	};
+#pragma keylist command_setLogLevel_281e5c60 ScriptID
+struct command_stop_e3cc5ca6 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  octet	ignored;
+	};
+#pragma keylist command_stop_e3cc5ca6 ScriptID
+struct exists_3f667963 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	item1;
+	};
+#pragma keylist exists_3f667963 ScriptID
+struct logevent_checkpoints_a3c1bf1e {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string	pause;
+	  string	stop;
+	  long	priority;
+	};
+#pragma keylist logevent_checkpoints_a3c1bf1e ScriptID
+struct logevent_description_87d7443e {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string	classname;
+	  string	description;
+	  string	remotes;
+	  long	priority;
+	};
+#pragma keylist logevent_description_87d7443e ScriptID
+struct logevent_heartbeat_455a0af8 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	heartbeat;
+	  long	priority;
+	};
+#pragma keylist logevent_heartbeat_455a0af8 ScriptID
+		const long Script_shared_ScriptState_Unconfigured=1;
+		const long Script_shared_ScriptState_Configured=2;
+		const long Script_shared_ScriptState_Running=3;
+		const long Script_shared_ScriptState_Paused=4;
+		const long Script_shared_ScriptState_Ending=5;
+		const long Script_shared_ScriptState_Stopping=6;
+		const long Script_shared_ScriptState_Failing=7;
+		const long Script_shared_ScriptState_Done=8;
+		const long Script_shared_ScriptState_Stopped=9;
+		const long Script_shared_ScriptState_Failed=10;
+		const long Script_shared_MetadataCSys_None=1;
+		const long Script_shared_MetadataCSys_ICRS=2;
+		const long Script_shared_MetadataCSys_Observed=3;
+		const long Script_shared_MetadataCSys_Mount=4;
+		const long Script_shared_MetadataRot_None=1;
+		const long Script_shared_MetadataRot_Sky=2;
+		const long Script_shared_MetadataRot_Horizon=3;
+		const long Script_shared_MetadataRot_Mount=4;
+		const long Script_shared_MetadataDome_Closed=1;
+		const long Script_shared_MetadataDome_Open=2;
+		const long Script_shared_MetadataDome_Either=3;
+struct logevent_logLevel_5204232a {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	level;
+	  long	priority;
+	};
+#pragma keylist logevent_logLevel_5204232a ScriptID
+struct logevent_logMessage_acb328da {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	level;
+	  string	message;
+	  string	traceback;
+	  long	priority;
+	};
+#pragma keylist logevent_logMessage_acb328da ScriptID
+struct logevent_metadata_9f580155 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  short	coordinateSystem;
+	  double	position[2];
+	  short	rotationSystem;
+	  double	cameraAngle;
+	  string	filters;
+	  short	dome;
+	  double	duration;
+	  long	priority;
+	};
+#pragma keylist logevent_metadata_9f580155 ScriptID
+struct logevent_state_26eba679 {
+	  long	ScriptID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  octet	state;
+	  string	reason;
+	  string	lastCheckpoint;
+	  long	priority;
+	};
+#pragma keylist logevent_state_26eba679 ScriptID
+	struct command
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ScriptID;
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string<128>	modifiers;
+	};
+	#pragma keylist command ScriptID
+	struct ackcmd
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ScriptID;
+	  long 		ack;
+	  long 		error;
+	  string<256>	result;
+	};
+	#pragma keylist ackcmd ScriptID
+	struct logevent
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ScriptID;
+	  string<128>	message;
+	};
+	#pragma keylist logevent ScriptID
+};
+

@@ -1,0 +1,599 @@
+module ATDome {
+struct command_abort_d4380c91 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_abort_d4380c91 ATDomeID
+struct command_closeShutter_6c99c465 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	ignored;
+	};
+#pragma keylist command_closeShutter_6c99c465 ATDomeID
+struct command_disable_d382541c {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_disable_d382541c ATDomeID
+struct command_enable_e2927175 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_enable_e2927175 ATDomeID
+struct command_enterControl_a32454b7 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_enterControl_a32454b7 ATDomeID
+struct command_exitControl_6cbf0051 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_exitControl_6cbf0051 ATDomeID
+struct command_homeAzimuth_070af33d {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	ignored;
+	};
+#pragma keylist command_homeAzimuth_070af33d ATDomeID
+struct command_moveAzimuth_f419be01 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  float	azimuth;
+	};
+#pragma keylist command_moveAzimuth_f419be01 ATDomeID
+struct command_moveShutterDropoutDoor_9e236fac {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	open;
+	};
+#pragma keylist command_moveShutterDropoutDoor_9e236fac ATDomeID
+struct command_moveShutterMainDoor_acbc47ac {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	open;
+	};
+#pragma keylist command_moveShutterMainDoor_acbc47ac ATDomeID
+struct command_openShutter_09dcaed8 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	ignored;
+	};
+#pragma keylist command_openShutter_09dcaed8 ATDomeID
+struct command_setLogLevel_91e40ce5 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	level;
+	};
+#pragma keylist command_setLogLevel_91e40ce5 ATDomeID
+struct command_setSimulationMode_710280cc {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  long	mode;
+	};
+#pragma keylist command_setSimulationMode_710280cc ATDomeID
+struct command_setValue_36859ee8 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string<256>	parametersAndValues;
+	};
+#pragma keylist command_setValue_36859ee8 ATDomeID
+struct command_standby_ff298ef8 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	value;
+	};
+#pragma keylist command_standby_ff298ef8 ATDomeID
+struct command_start_c7dc4bc9 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string<256>	settingsToApply;
+	};
+#pragma keylist command_start_c7dc4bc9 ATDomeID
+struct command_stopMotion_326f076a {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  boolean	ignored;
+	};
+#pragma keylist command_stopMotion_326f076a ATDomeID
+struct logevent_allAxesInPosition_2f491eb4 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	inPosition;
+	  long	priority;
+	};
+#pragma keylist logevent_allAxesInPosition_2f491eb4 ATDomeID
+struct logevent_appliedSettingsMatchStart_268f49f0 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	appliedSettingsMatchStartIsTrue;
+	  long	priority;
+	};
+#pragma keylist logevent_appliedSettingsMatchStart_268f49f0 ATDomeID
+struct logevent_azimuthCommandedState_5544b90a {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	commandedState;
+	  float	azimuth;
+	  long	priority;
+	};
+#pragma keylist logevent_azimuthCommandedState_5544b90a ATDomeID
+struct logevent_azimuthInPosition_6d8a38b0 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	inPosition;
+	  long	priority;
+	};
+#pragma keylist logevent_azimuthInPosition_6d8a38b0 ATDomeID
+struct logevent_azimuthState_bfa58021 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	state;
+	  boolean	homing;
+	  long	priority;
+	};
+#pragma keylist logevent_azimuthState_bfa58021 ATDomeID
+struct logevent_dropoutDoorCommandedState_4caf6137 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	commandedState;
+	  long	priority;
+	};
+#pragma keylist logevent_dropoutDoorCommandedState_4caf6137 ATDomeID
+struct logevent_dropoutDoorState_eb629564 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	state;
+	  long	priority;
+	};
+#pragma keylist logevent_dropoutDoorState_eb629564 ATDomeID
+struct logevent_emergencyStop_512be0eb {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	active;
+	  long	priority;
+	};
+#pragma keylist logevent_emergencyStop_512be0eb ATDomeID
+struct logevent_errorCode_f33f6fd4 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	errorCode;
+	  string	errorReport;
+	  string	traceback;
+	  long	priority;
+	};
+#pragma keylist logevent_errorCode_f33f6fd4 ATDomeID
+struct logevent_heartbeat_36765e32 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	heartbeat;
+	  long	priority;
+	};
+#pragma keylist logevent_heartbeat_36765e32 ATDomeID
+		const long ATDome_shared_AzimuthCommandedState_Unknown=1;
+		const long ATDome_shared_AzimuthCommandedState_GoToPosition=2;
+		const long ATDome_shared_AzimuthCommandedState_Home=3;
+		const long ATDome_shared_AzimuthCommandedState_Stop=4;
+		const long ATDome_shared_AzimuthState_NotInMotion=1;
+		const long ATDome_shared_AzimuthState_MovingCW=2;
+		const long ATDome_shared_AzimuthState_MovingCCW=3;
+		const long ATDome_shared_ShutterDoorCommandedState_Unknown=1;
+		const long ATDome_shared_ShutterDoorCommandedState_Closed=2;
+		const long ATDome_shared_ShutterDoorCommandedState_Opened=3;
+		const long ATDome_shared_ShutterDoorCommandedState_Stop=4;
+		const long ATDome_shared_ShutterDoorState_Closed=1;
+		const long ATDome_shared_ShutterDoorState_Opened=2;
+		const long ATDome_shared_ShutterDoorState_PartiallyOpened=3;
+		const long ATDome_shared_ShutterDoorState_Opening=4;
+		const long ATDome_shared_ShutterDoorState_Closing=5;
+struct logevent_logLevel_05006c97 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	level;
+	  long	priority;
+	};
+#pragma keylist logevent_logLevel_05006c97 ATDomeID
+struct logevent_logMessage_7e3adbb4 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	level;
+	  string	message;
+	  string	traceback;
+	  long	priority;
+	};
+#pragma keylist logevent_logMessage_7e3adbb4 ATDomeID
+struct logevent_mainDoorCommandedState_daf4ac6a {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	commandedState;
+	  long	priority;
+	};
+#pragma keylist logevent_mainDoorCommandedState_daf4ac6a ATDomeID
+struct logevent_mainDoorState_ff9856ec {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	state;
+	  long	priority;
+	};
+#pragma keylist logevent_mainDoorState_ff9856ec ATDomeID
+struct logevent_scbLink_ef272986 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	active;
+	  long	priority;
+	};
+#pragma keylist logevent_scbLink_ef272986 ATDomeID
+struct logevent_settingVersions_e1c12536 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string	recommendedSettingsVersion;
+	  string	recommendedSettingsLabels;
+	  string	settingsUrl;
+	  long	priority;
+	};
+#pragma keylist logevent_settingVersions_e1c12536 ATDomeID
+struct logevent_settingsAppliedDomeController_96239801 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	rainSensorEnabled;
+	  boolean	cloudSensorEnabled;
+	  float	tolerance;
+	  float	homeAzimuth;
+	  float	highSpeedDistance;
+	  float	watchdogTimer;
+	  float	reversalDelay;
+	  boolean	autoShutdownEnabled;
+	  long	priority;
+	};
+#pragma keylist logevent_settingsAppliedDomeController_96239801 ATDomeID
+struct logevent_settingsAppliedDomeTcp_ecc44eda {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  string	host;
+	  long	port;
+	  float	readTimeout;
+	  float	connectionTimeout;
+	  long	priority;
+	};
+#pragma keylist logevent_settingsAppliedDomeTcp_ecc44eda ATDomeID
+struct logevent_shutterInPosition_f1592f29 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  boolean	inPosition;
+	  long	priority;
+	};
+#pragma keylist logevent_shutterInPosition_f1592f29 ATDomeID
+struct logevent_simulationMode_40725848 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	mode;
+	  long	priority;
+	};
+#pragma keylist logevent_simulationMode_40725848 ATDomeID
+struct logevent_summaryState_c38fc5a2 {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  long	summaryState;
+	  long	priority;
+	};
+#pragma keylist logevent_summaryState_c38fc5a2 ATDomeID
+struct position_358923ff {
+	  long	ATDomeID;
+	  string<8>	private_revCode; //private
+	  double	private_sndStamp; //private
+	  double	private_rcvStamp; //private
+	  long		private_seqNum; //private
+	  long		private_origin; //private
+	  long		private_host; //private
+	  float	dropoutDoorOpeningPercentage;
+	  float	mainDoorOpeningPercentage;
+	  double	azimuthPosition;
+	};
+#pragma keylist position_358923ff ATDomeID
+	struct command
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ATDomeID;
+	  string<32>	device;
+	  string<32>	property;
+	  string<32>	action;
+	  string<32>	itemValue;
+	  string<128>	modifiers;
+	};
+	#pragma keylist command ATDomeID
+	struct ackcmd
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ATDomeID;
+	  long 		ack;
+	  long 		error;
+	  string<256>	result;
+	};
+	#pragma keylist ackcmd ATDomeID
+	struct logevent
+	{
+	  string<8>	private_revCode;
+	  double	private_sndStamp;
+	  double	private_rcvStamp;
+	  long		private_origin;
+	  long 		private_host;
+	  long		private_seqNum;
+	  long	ATDomeID;
+	  string<128>	message;
+	};
+	#pragma keylist logevent ATDomeID
+};
+
