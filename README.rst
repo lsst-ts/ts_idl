@@ -1,4 +1,4 @@
-Repository of IDL files used by for ts_salobj.
+IDL files for use by ts_salobj, and Python enum files generated from XML.
 
 Contents:
 
@@ -20,3 +20,11 @@ To generate new IDL files:
 * Make sure environment variable ``$SAL_WORK_DIR`` is defined.
 * Run ``make_idl_files.py sal_component_name1 [sal_component_name12 [...]]``.
   For example: ``make_idl_files.py Test Script ScriptQueue``
+
+To generate new enum files:
+
+* As of 2019-05-21 this is done manually; eventually it may be automated.
+* Inherit from enum.IntEnum so the values can more easily be treated as integers.
+* Use UPPERCASE for enum values. This is the python convention and avoids problems from using ``None`` as a value.
+* Match the XML exactly (other than case), to make the mapping between XML and python more obvious and to allow automatic generation someday.
+* No underscore between words, to simplify automatic generation.
