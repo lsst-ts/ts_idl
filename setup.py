@@ -12,7 +12,7 @@ setup(
     # install_requires=install_requires,
     package_dir={"": "python"},
     packages=find_namespace_packages(where="python"),
-    package_data={"": ["*.rst", "*.yaml", "*.idl"]},
+    package_data={"": ["*.rst", "*.yaml"], "idl":["*.idl"], "qos":["*.xml"]},
     # scripts=[],
     # tests_require=tests_require,
     extras_require={"dev": dev_requires},
