@@ -15,8 +15,6 @@ idl_files = glob.glob("idl/*.idl")
 setuptools.setup(
     name="ts_idl",
     description="Contains helper functions for the generated idl library by ts_sal.",
-    use_scm_version=True,
-    setup_requires=["setuptools_scm"],
     # install_requires=install_requires,
     package_dir={"": "python"},
     packages=setuptools.find_namespace_packages(where="python"),
