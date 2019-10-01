@@ -1,4 +1,5 @@
-import sys, os
+import sys
+import os
 import setuptools
 # from setuptools import setup, find_namespace_packages
 import pathlib
