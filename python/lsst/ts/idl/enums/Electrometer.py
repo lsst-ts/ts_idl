@@ -15,5 +15,5 @@ class DetailedState(enum.IntEnum):
 
 
 class Units(enum.IntEnum):
-    current = 1
-    charge = 2
+    CURRENT = 1
+    CHARGE = 2
