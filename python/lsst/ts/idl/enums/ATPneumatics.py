@@ -17,6 +17,16 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
+"""WARNING:
+
+As of 2019-10-31 these enumeration values match the values actually output
+by the ATPneumatics CSC, but they DO NOT MATCH the enumeration values in
+ATPneumatics_Events.xml in ts_xml. The XML file is missing the unwanted
+summary states (DISABLED through STANDBY).
+
+Our long range plan is to change the CSC (and these enums) to match
+ATPneumatics_Events.xml in ts_xml.
+"""
 
 __all__ = ["MirrorCoverState", "CellVentState", "AirValveState"]
 
@@ -24,24 +34,44 @@ import enum
 
 
 class MirrorCoverState(enum.IntEnum):
-    CLOSED = 1
-    OPENED = 2
-    INMOTION = 3
-    INVALID = 4
+    DISABLED = 1
+    ENABLED = 2
+    FAULT = 3
+    OFFLINE = 4
+    STANDBY = 5
+    CLOSED = 6
+    OPENED = 7
+    INMOTION = 8
+    INVALID = 9
 
 
 class CellVentState(enum.IntEnum):
-    CELLVENTSOPENED = 1
-    CELLVENTSCLOSED = 2
-    INMOTION = 3
+    DISABLED = 1
+    ENABLED = 2
+    FAULT = 3
+    OFFLINE = 4
+    STANDBY = 5
+    OPENED = 6
+    CLOSED = 7
+    INMOTION = 8
 
 
 class AirValveState(enum.IntEnum):
-    VALVEOPENED = 1
-    VALVECLOSED = 2
+    DISABLED = 1
+    ENABLED = 2
+    FAULT = 3
+    OFFLINE = 4
+    STANDBY = 5
+    OPENED = 6
+    CLOSED = 7
 
 
 class VentsPosition(enum.IntEnum):
-    OPENED = 1
-    CLOSED = 2
-    PARTIALLYOPENED = 3
+    DISABLED = 1
+    ENABLED = 2
+    FAULT = 3
+    OFFLINE = 4
+    STANDBY = 5
+    OPENED = 6
+    CLOSED = 7
+    PARTIALLYOPENED = 8
