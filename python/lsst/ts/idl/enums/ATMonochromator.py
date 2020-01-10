@@ -30,8 +30,8 @@ class Grating(enum.IntEnum):
 
 
 class Slit(enum.IntEnum):
-    FRONTENTRANCE = 1
-    FRONTEXIT = 2
+    ENTRY = 1
+    EXIT = 2
 
 
 class LightStatus(enum.IntEnum):
@@ -43,3 +43,21 @@ class Device(enum.IntEnum):
     MONOCHROMATOR = 1
     LIGHTSOURCE = 2
     THERMOELECTRICCOOLER = 3
+
+
+class DetailedState(enum.IntEnum):
+    NOT_ENABLED = 1
+    READY = 2
+    CHANGING_WAVELENGTH = 3
+    CALIBRATING_WAVELENGTH = 4
+    POWERING = 5
+    SELECTING_GRATING = 6
+    CHANGING_SLIT_WIDTH = 7
+    UPDATING_SETUP = 8
+
+
+class Status(enum.IntEnum):
+    SETTING_UP = 1
+    READY = 2
+    OFFLINE = 3
+    FAULT = 4
