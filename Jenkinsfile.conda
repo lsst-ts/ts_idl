@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+    environment {
+        // idl_version = "${GIT_TAG_NAME}"
+        idl_version = "1.1.0"
+        xml_version = "4.6.0"
+        dockerImageNameBuild = "agent"
+        container_name = "idl_${BUILD_ID}_${JENKINS_NODE_COOKIE}"
+    }
+
+    stages {
+        stage("Checkout ts_recipes") {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/tickets/DM-21505']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/lsst-ts/ts_recipes']]])
+            }
+
+        }
+        stage("Build Docker Image") {
+            steps {
+                dir('agent') {
+                    script {
+                        dockerImageBuild = docker.build(dockerImageNameBuild, "--pull --no-cache .")
+                    }
+                }
+            }
+        }
+        stage("Create IDL Conda package") {
+            steps {
+                script {
+                    sh """
+                    docker run --name ${container_name} -di --rm -v conda:/home/saluser/conda agent
+                    docker exec --env TS_XML_VERSION=v${xml_version} ${container_name} sh -c "cd ~/conda && source ~/miniconda3/bin/activate && conda build ."
+                    """
+                }
+            }
+        }
+        stage("Push IDL Conda package") {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'CondaForge', passwordVariable: 'anaconda_pass', usernameVariable: 'anaconda_user')]) {
+                    script {
+                        sh """
+                        docker exec ${container_name} sh -c "source ~/miniconda3/bin/activate && \
+                            anaconda login --user ${anaconda_user} --password ${anaconda_pass} && \
+                            anaconda upload -u lsstts --force \
+                            /home/saluser/miniconda3/conda-bld/linux-64/ts-idl-v${idl_version}-py37_0.tar.bz2"
+                        """
+                    }
+                }
+            }
+        }
+    }
+    post {
+        cleanup {
+            sh """
+            docker stop ${container_name}
+            """
+        }
+    }
+}
