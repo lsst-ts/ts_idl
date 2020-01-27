@@ -4,23 +4,17 @@ pipeline {
         // idl_version = "${GIT_TAG_NAME}"
         idl_version = "1.1.0"
         xml_version = "4.6.0"
-        dockerImageNameBuild = "agent"
+        dockerImageName = "lsstts/conda_package_builder:latest"
         container_name = "idl_${BUILD_ID}_${JENKINS_NODE_COOKIE}"
     }
 
     stages {
-        stage("Checkout ts_recipes") {
+        stage("Pull Docker Image") {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/tickets/DM-21505']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/lsst-ts/ts_recipes']]])
-            }
-
-        }
-        stage("Build Docker Image") {
-            steps {
-                dir('agent') {
-                    script {
-                        dockerImageBuild = docker.build(dockerImageNameBuild, "--pull --no-cache .")
-                    }
+                script {
+                    sh """
+                    docker pull ${dockerImageName}
+                    """
                 }
             }
         }
