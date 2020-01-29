@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    docker run --name ${container_name} -di --rm -v conda:/home/saluser/conda agent
+                    docker run --name ${container_name} -di --rm -v ${WORKSPACE}/conda:/home/saluser/conda ${dockerImageName}
                     docker exec --env TS_XML_VERSION=v${xml_version} ${container_name} sh -c "cd ~/conda && source ~/miniconda3/bin/activate && conda build ."
                     """
                 }
@@ -36,7 +36,7 @@ pipeline {
                         docker exec ${container_name} sh -c "source ~/miniconda3/bin/activate && \
                             anaconda login --user ${anaconda_user} --password ${anaconda_pass} && \
                             anaconda upload -u lsstts --force \
-                            /home/saluser/miniconda3/conda-bld/linux-64/ts-idl-v${idl_version}-py37_0.tar.bz2"
+                            ~/miniconda3/conda-bld/linux-64/ts-idl-v${idl_version}-py37_0.tar.bz2"
                         """
                     }
                 }
