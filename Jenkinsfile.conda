@@ -23,8 +23,8 @@ pipeline {
                 script {
                     sh """
                     docker run --name ${container_name} -di --rm -v ${WORKSPACE}/conda:/home/saluser/conda ${dockerImageName}
-                    docker exec --env TS_XML_VERSION=v${xml_version} ${container_name} sh -c "cd ~/conda && source ~/miniconda3/bin/activate && \
-                        yum --disablerepo="*" --enablerepo="lsst-ts" install \\* && conda build ."
+                    docker exec ${container_name} -u root sh -c "yum --disablerepo="*" --enablerepo="lsst-ts" install \\*"
+                    docker exec --env TS_XML_VERSION=v${xml_version} ${container_name} sh -c "cd ~/conda && source ~/miniconda3/bin/activate && conda build ."
                     """
                 }
             }
