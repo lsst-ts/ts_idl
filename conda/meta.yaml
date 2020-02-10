@@ -5,7 +5,7 @@ package:
 
 source:
   git_url: https://github.com/lsst-ts/ts_idl
-  git_rev: v1.1.0
+  git_rev: {{ idl_version }}
 
 build:
   skip: False #[win]
