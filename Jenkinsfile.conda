@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=v${xml_version} --env IDL_VERION=${idl_version} \
+                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=v${xml_version} --env IDL_VERSION=${idl_version} \
                         -v ${WORKSPACE}/conda:/home/saluser/conda ${dockerImageName}
                     docker exec -u root -w /tmp ${container_name} sh -c "repoquery --disablerepo="*" --enablerepo="lsst-ts" -a \
                         |grep -v _test- |grep -v python-0 |grep -v OpenSplice |xargs yum install -y"
