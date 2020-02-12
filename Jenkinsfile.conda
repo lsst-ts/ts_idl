@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         idl_version = sh(returnStdout: true, script: "git tag --sort version:refname | tail -1").trim()
-        xml_version = "4.6.0"
+        xml_version = "v4.6.0"
         dockerImageName = "lsstts/conda_package_builder:latest"
         container_name = "idl_${BUILD_ID}_${JENKINS_NODE_COOKIE}"
     }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=v${xml_version} --env IDL_VERSION=${idl_version} \
+                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${xml_version} --env IDL_VERSION=${idl_version} \
                         -v ${WORKSPACE}/conda:/home/saluser/conda ${dockerImageName}
                     docker exec -u root -w /tmp ${container_name} sh -c "repoquery --disablerepo="*" --enablerepo="lsst-ts" -a \
                         |grep -v _test- |grep -v python-0 |grep -v OpenSplice |xargs yum install -y"
