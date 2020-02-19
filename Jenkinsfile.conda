@@ -23,8 +23,8 @@ pipeline {
             steps {
                 script {
                     sh """
-                    echo "The IDL version: " + ${idl_version}
-                    echo "The XML version: " + ${params.xml_version}
+                    echo "The IDL version: ${idl_version}"
+                    echo "The XML version: ${params.xml_version}"
                     docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} --env IDL_VERSION=${idl_version} \
                         -v ${WORKSPACE}/conda:/home/saluser/conda ${dockerImageName}
                     docker exec -u root -w /tmp ${container_name} sh -c "repoquery --disablerepo="*" --enablerepo="lsst-ts" -a \
