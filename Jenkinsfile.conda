@@ -28,7 +28,7 @@ pipeline {
                     docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} --env IDL_VERSION=${idl_version} \
                         -v ${WORKSPACE}/conda:/home/saluser/conda ${dockerImageName}
                     docker exec -u root -w /tmp ${container_name} sh -c "repoquery --disablerepo="*" --enablerepo="lsst-ts" -a \
-                        |grep -v _test- |grep -v python-0 |grep -v OpenSplice |xargs yum install -y"
+                        |grep -v _test- |grep -v python-0 |grep -v OpenSplice |grep ${params.xml_version} |xargs yum install -y"
                     docker exec ${container_name} sh -c "cd ~/conda && source ~/miniconda3/bin/activate && conda build ."
                     docker exec ${container_name} sh -c "ls ~/miniconda3/conda-bld/linux-64"
                     """
