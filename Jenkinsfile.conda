@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         idl_version = sh(returnStdout: true, script: "git tag --sort version:refname | tail -1").trim()
-        xml_version = sh(returnStdout: true, script: "repoquery --disablerepo='*' --enablerepo='lsst-ts' -a |grep Test |grep -v _test- |cut -d'-' -f3 |sed -e \"s/.el7.x86_64$//\").trim()
+        xml_version = sh(returnStdout: true, script: "repoquery --disablerepo='*' --enablerepo='lsst-ts' -a |grep Test |grep -v _test- |cut -d'-' -f3 |sed -e \"s/.el7.x86_64\$//\").trim()
         echo "The IDL version: " + idl_version
         echo "The XML version: " + xml_version
         dockerImageName = "lsstts/conda_package_builder:latest"
