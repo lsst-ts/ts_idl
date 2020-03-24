@@ -4,8 +4,7 @@ package:
   version: {{ IDL_VERSION }}_{{ TS_XML_VERSION }}
 
 source:
-  git_url: https://github.com/lsst-ts/ts_idl
-  git_rev: {{ IDL_VERSION }}
+  path: ../
 
 build:
   skip: False #[win]
