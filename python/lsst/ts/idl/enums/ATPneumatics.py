@@ -67,11 +67,6 @@ class AirValveState(enum.IntEnum):
 
 
 class VentsPosition(enum.IntEnum):
-    DISABLED = 1
-    ENABLED = 2
-    FAULT = 3
-    OFFLINE = 4
-    STANDBY = 5
-    OPENED = 6
-    CLOSED = 7
-    PARTIALLYOPENED = 8
+    OPENED = 0
+    CLOSED = 1
+    PARTIALLYOPENED = 2
