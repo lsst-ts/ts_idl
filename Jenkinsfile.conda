@@ -7,6 +7,7 @@ pipeline {
     }
     parameters {
         string(defaultValue: '4.7.0', description: 'The XML Version, exclude any preceeding "v" characters: X.Y.Z', name: 'xml_version')
+        string(defaultValue: '4.1.1', description: 'The ts_sal version, exclude any preceeding "v" characters: X.Y.Z', name: 'sal_version')
     }
 
     stages {
@@ -25,10 +26,10 @@ pipeline {
                     sh """
                     echo "The IDL version: ${idl_version}"
                     echo "The XML version: ${params.xml_version}"
+                    echo "The SAL version: ${params.sal_version}"
                     docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} --env IDL_VERSION=${idl_version} \
-                        -v ${WORKSPACE}:/home/saluser/package_dir ${dockerImageName}
-                    docker exec -u root -w /tmp ${container_name} sh -c "repoquery --disablerepo="*" --enablerepo="lsst-ts" -a \
-                        |grep -v _test- |grep -v python-0 |grep -v OpenSplice |grep ${params.xml_version} |xargs yum install -y"
+                        --env TS_SAL_VERSION=${sal_version} -v ${WORKSPACE}:/home/saluser/package_dir ${dockerImageName}
+                    docker exec -u root -w /tmp ${container_name} sh -c "yum install -y sal_runtime-${param.sal_version}-${param.xml_version}.el7.x86_64"
                     docker exec ${container_name} sh -c "cd ~/package_dir/conda && source ~/miniconda3/bin/activate && conda build ."
                     docker exec ${container_name} sh -c "ls ~/miniconda3/conda-bld/linux-64"
                     """
@@ -43,7 +44,7 @@ pipeline {
                         docker exec ${container_name} sh -c "source ~/miniconda3/bin/activate && \
                             anaconda login --user ${anaconda_user} --password ${anaconda_pass} && \
                             anaconda upload -u lsstts --force \
-                            ~/miniconda3/conda-bld/linux-64/ts-idl-${idl_version}_${params.xml_version}-py37_0.tar.bz2"
+                            ~/miniconda3/conda-bld/linux-64/ts-idl-${idl_version}_${params.sal_version}_${params.xml_version}-py37_0.tar.bz2"
                         """
                     }
                 }
