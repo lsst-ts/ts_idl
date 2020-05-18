@@ -29,7 +29,8 @@ pipeline {
                     echo "The SAL version: ${params.sal_version}"
                     docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} --env IDL_VERSION=${idl_version} \
                         --env TS_SAL_VERSION=${sal_version} -v ${WORKSPACE}:/home/saluser/package_dir ${dockerImageName}
-                    docker exec -u root -w /tmp ${container_name} sh -c "yum install -y sal_runtime-${param.sal_version}-${param.xml_version}.el7.x86_64"
+                    docker exec -u root -w /tmp ${container_name} sh -c "yum makecache fast ; yum install -y --disablerepo="*" \
+                        --enablerepo="lsst-ts-daily" --enablerepo="base" ts_sal_runtime-${params.sal_version}-${params.xml_version}.el7.x86_64"
                     docker exec ${container_name} sh -c "cd ~/package_dir/conda && source ~/miniconda3/bin/activate && conda build ."
                     docker exec ${container_name} sh -c "ls ~/miniconda3/conda-bld/linux-64"
                     """
