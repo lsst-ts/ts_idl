@@ -47,7 +47,7 @@ pipeline {
                         docker exec ${container_name} sh -c "source ~/miniconda3/bin/activate && \
                             anaconda login --user ${anaconda_user} --password ${anaconda_pass} && \
                             anaconda upload -u lsstts --force \
-                            ~/miniconda3/conda-bld/linux-64/ts-idl-${idl_version}_${params.sal_version}_${params.xml_version}-py37_0.tar.bz2"
+                            ~/miniconda3/conda-bld/linux-64/ts-idl-*-py37_0.tar.bz2"
                         """
                     }
                 }
@@ -62,7 +62,7 @@ pipeline {
                         docker exec ${container_name} sh -c "source ~/miniconda3/bin/activate && \
                             anaconda login --user ${anaconda_user} --password ${anaconda_pass} && \
                             anaconda upload -u lsstts --force  --label dev \
-                            ~/miniconda3/conda-bld/linux-64/ts-idl-${idl_version}_${params.sal_version}_${params.xml_version}-py37_0.tar.bz2"
+                            ~/miniconda3/conda-bld/linux-64/ts-idl-*-py37_0.tar.bz2"
                         """
                     }
                 }
