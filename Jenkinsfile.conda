@@ -1,7 +1,6 @@
 pipeline {
     agent any
     environment {
-        idl_version = sh(returnStdout: true, script: "git describe --tags --always --dirty |tr -d v").trim()
         dockerImageName = "lsstts/conda_package_builder:latest"
         container_name = "idl_${BUILD_ID}_${JENKINS_NODE_COOKIE}"
     }
@@ -25,10 +24,9 @@ pipeline {
             steps {
                 script {
                     sh """
-                    echo "The IDL version: ${idl_version}"
                     echo "The XML version: ${params.xml_version}"
                     echo "The SAL version: ${params.sal_version}"
-                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} --env IDL_VERSION=${idl_version} \
+                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} \
                         --env TS_SAL_VERSION=${sal_version} -v ${WORKSPACE}:/home/saluser/package_dir ${dockerImageName}
                     docker exec -u root -w /tmp ${container_name} sh -c "yum makecache fast ; yum install -y --disablerepo="*" \
                         --enablerepo="lsst-ts-daily" --enablerepo="base" ts_sal_runtime-${params.sal_version}-${params.xml_version}.el7.x86_64"
