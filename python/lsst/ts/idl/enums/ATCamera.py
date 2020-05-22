@@ -18,8 +18,15 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["OfflineDetailedState", "ImageReadinessDetailedState", "CalibrationDetailedState",
-           "ShutterDetailedState", "CCSCommandState", "RaftsDetailedState", "CCDType"]
+__all__ = [
+    "OfflineDetailedState",
+    "ImageReadinessDetailedState",
+    "CalibrationDetailedState",
+    "ShutterDetailedState",
+    "CCSCommandState",
+    "RaftsDetailedState",
+    "CCDType",
+]
 
 import enum
 

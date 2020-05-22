@@ -17,6 +17,8 @@ build:
     - LSST_DDS_DOMAIN
     - PYTHON_BUILD_VERSION
     - PYTHON_BUILD_LOCATION
+    - TS_SAL_VERSION
+    - TS_XML_VERSION
 
 requirements:
   host:

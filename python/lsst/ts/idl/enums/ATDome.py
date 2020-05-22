@@ -18,7 +18,12 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["AzimuthCommandedState", "AzimuthState", "ShutterDoorCommandedState", "ShutterDoorState"]
+__all__ = [
+    "AzimuthCommandedState",
+    "AzimuthState",
+    "ShutterDoorCommandedState",
+    "ShutterDoorState",
+]
 
 import enum
 

@@ -20,4 +20,9 @@
 
 __all__ = ["ControllerState", "OfflineSubstate", "EnabledSubstate", "ApplicationStatus"]
 
-from .Rotator import ControllerState, OfflineSubstate, EnabledSubstate, ApplicationStatus
+from .Rotator import (
+    ControllerState,
+    OfflineSubstate,
+    EnabledSubstate,
+    ApplicationStatus,
+)

@@ -18,20 +18,33 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["TargetInstances", "LogLevel", "OffTypes", "OnOff", "Wraps",
-           "CoordFrame", "RotFrame", "RotMode", "AccessModes", "Planets",
-           "Foci", "WarningLevel", "DetailedStates", "TargetTypes"]
+__all__ = [
+    "TargetInstances",
+    "LogLevel",
+    "OffTypes",
+    "OnOff",
+    "Wraps",
+    "CoordFrame",
+    "RotFrame",
+    "RotMode",
+    "AccessModes",
+    "Planets",
+    "Foci",
+    "WarningLevel",
+    "DetailedStates",
+    "TargetTypes",
+]
 
 import enum
 
 
-class TargetInstances (enum.IntEnum):
+class TargetInstances(enum.IntEnum):
     CURRENT = 1
     NEXT = 2
     PROSPECTIVE = 3
 
 
-class LogLevel (enum.IntEnum):
+class LogLevel(enum.IntEnum):
     NONE = 1
     FATAL = 2
     ERROR = 3
@@ -41,42 +54,42 @@ class LogLevel (enum.IntEnum):
     VERBOSE = 7
 
 
-class OffTypes (enum.IntEnum):
+class OffTypes(enum.IntEnum):
     SIMPLE = 1
     TPLANE = 2
 
 
-class OnOff (enum.IntEnum):
+class OnOff(enum.IntEnum):
     ON = 1
     OFF = 2
 
 
-class Wraps (enum.IntEnum):
+class Wraps(enum.IntEnum):
     CW = 1
     CCW = 2
 
 
-class CoordFrame (enum.IntEnum):
+class CoordFrame(enum.IntEnum):
     FK5 = 1
     ICRS = 2
 
 
-class RotFrame (enum.IntEnum):
+class RotFrame(enum.IntEnum):
     TARGET = 1
     FIXED = 2
 
 
-class RotMode (enum.IntEnum):
+class RotMode(enum.IntEnum):
     FIELD = 1
     SLIT = 2
 
 
-class AccessModes (enum.IntEnum):
+class AccessModes(enum.IntEnum):
     OPERATOR = 1
     ENGINEER = 2
 
 
-class Planets (enum.IntEnum):
+class Planets(enum.IntEnum):
     MERCURY = 1
     VENUS = 2
     MOON = 3
@@ -88,26 +101,26 @@ class Planets (enum.IntEnum):
     PLUTO = 9
 
 
-class Foci (enum.IntEnum):
+class Foci(enum.IntEnum):
     PRIME = 1
     NASMYTH1 = 2
     NASMYTH2 = 3
 
 
-class WarningLevel (enum.IntEnum):
+class WarningLevel(enum.IntEnum):
     NONE = 1
     MINOR = 2
     MAJOR = 3
 
 
-class DetailedStates (enum.IntEnum):
+class DetailedStates(enum.IntEnum):
     NOTTRACKING = 1
     AZEL = 2
     OPENLOOP = 3
     GUIDING = 4
 
 
-class TargetTypes (enum.IntEnum):
+class TargetTypes(enum.IntEnum):
     RADEC = 1
     AZEL = 2
     PLANET = 3
