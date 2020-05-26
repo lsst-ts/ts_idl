@@ -26,6 +26,7 @@ import enum
 
 class Location(enum.IntEnum):
     """Location constants for adding and moving scripts."""
+
     FIRST = 1
     LAST = 2
     BEFORE = 3
@@ -34,6 +35,7 @@ class Location(enum.IntEnum):
 
 class ScriptProcessState(enum.IntEnum):
     """ScriptQueue script.processState event constants."""
+
     UNKNOWN = 0
     LOADING = 1
     CONFIGURED = 2

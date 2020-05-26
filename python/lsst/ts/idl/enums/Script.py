@@ -27,6 +27,7 @@ import enum
 class ScriptState(enum.IntEnum):
     """ScriptState constants.
     """
+
     UNKNOWN = 0
     """Script state is unknown."""
     UNCONFIGURED = 1
@@ -55,6 +56,7 @@ class ScriptState(enum.IntEnum):
 
 class MetadataCoordSys(enum.IntEnum):
     """Constants for the Script metadata.coordinateSystem event field"""
+
     NONE = 1
     ICRS = 2
     OBSERVED = 3
@@ -63,6 +65,7 @@ class MetadataCoordSys(enum.IntEnum):
 
 class MetadataRotSys(enum.IntEnum):
     """Constants for the Script metadata.rotationSystem event field"""
+
     NONE = 1
     SKY = 2
     HORIZON = 3
@@ -71,6 +74,7 @@ class MetadataRotSys(enum.IntEnum):
 
 class MetadataDome(enum.IntEnum):
     """Constants for the Script metadata.dome event field"""
+
     CLOSED = 1
     OPEN = 2
     EITHER = 3

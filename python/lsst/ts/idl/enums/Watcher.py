@@ -26,6 +26,7 @@ import enum
 
 class AlarmSeverity(enum.IntEnum):
     """Alarm severity."""
+
     NONE = 1
     WARNING = 2
     SERIOUS = 3
