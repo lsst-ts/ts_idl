@@ -16,6 +16,8 @@ pipeline {
                 script {
                     sh """
                     docker pull ${dockerImageName}
+                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} \
+                        --env TS_SAL_VERSION=${sal_version} -v ${WORKSPACE}:/home/saluser/package_dir ${dockerImageName}
                     """
                 }
             }
@@ -23,14 +25,21 @@ pipeline {
         stage("Create IDL Conda package") {
             steps {
                 script {
+                    sh """echo 'The XML version: ${params.xml_version}'"""
+                    sh """echo 'The SAL version: ${params.sal_version}'"""
+                    timeout(5) {
+                        waitUntil(initialRecurrencePeriod: 15000, quiet: true) {
+                            def r = sh (
+                                script: """docker exec -u root ${container_name} sh -c 'yum --enablerepo=\'lsst-ts-daily\' list ts_sal_runtime-4.1.2_427-${params.xml_version}.el7.x86_64' """,
+                                returnStatus: true
+                            )
+                            return r == 0
+                        }
+                    }
                     sh """
-                    echo "The XML version: ${params.xml_version}"
-                    echo "The SAL version: ${params.sal_version}"
-                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} \
-                        --env TS_SAL_VERSION=${sal_version} -v ${WORKSPACE}:/home/saluser/package_dir ${dockerImageName}
-                    docker exec -u root -w /tmp ${container_name} sh -c "yum makecache fast ; \
-                    yum install -y --enablerepo="lsst-ts-daily" \
-                    ts_sal_runtime-${params.sal_version}-${params.xml_version}.el7.x86_64"
+                    docker exec -u root -w /tmp ${container_name} sh -c "yum clean all ; yum update ; \
+                        yum install -y --enablerepo="lsst-ts-daily" \
+                            ts_sal_runtime-${params.sal_version}-${params.xml_version}.el7.x86_64"
                     docker exec ${container_name} sh -c "cd ~/package_dir/conda && source ~/miniconda3/bin/activate && conda build ."
                     docker exec ${container_name} sh -c "ls ~/miniconda3/conda-bld/linux-64"
                     """
