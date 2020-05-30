@@ -30,7 +30,7 @@ pipeline {
                     timeout(5) {
                         waitUntil(initialRecurrencePeriod: 15000, quiet: true) {
                             def r = sh (
-                                script: """docker exec -u root ${container_name} sh -c 'yum --enablerepo=\'lsst-ts-daily\' list ts_sal_runtime-${params.sal_version}-${params.xml_version}.el7.x86_64' """,
+                                script: """docker exec -u root ${container_name} sh -c 'yum clean metadata ; yum --enablerepo=\'lsst-ts-daily\' list ts_sal_runtime-${params.sal_version}-${params.xml_version}.el7.x86_64' """,
                                 returnStatus: true
                             )
                             return r == 0
