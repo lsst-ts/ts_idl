@@ -33,6 +33,7 @@ class ControllerState(enum.IntEnum):
 
     Called ``States`` in Moog code.
     """
+
     STANDBY = 0
     DISABLED = enum.auto()
     ENABLED = enum.auto()
@@ -47,6 +48,7 @@ class OfflineSubstate(enum.IntEnum):
 
     This is enum ``OfflineSubStates`` in Moog code.
     """
+
     PUBLISH_ONLY = 0
     AVAILABLE = enum.auto()
 
@@ -58,6 +60,7 @@ class EnabledSubstate(enum.IntEnum):
 
     This is enum ``EnabledSubStates`` in Moog code.
     """
+
     STATIONARY = 0
     MOVING_POINT_TO_POINT = enum.auto()
     SLEWING_OR_TRACKING = enum.auto()
@@ -72,6 +75,7 @@ class ApplicationStatus(enum.IntFlag):
 
     These are constants, with the same names and values, in Moog code.
     """
+
     HEX_FOLLOWING_ERROR_MASK = 0x00000001
     HEX_MOVE_COMPLETE_MASK = 0x00000002
     COMMAND_REJECT_MASK = 0x00000020

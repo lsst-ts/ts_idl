@@ -17,6 +17,7 @@ class LaserDetailedState(enum.IntEnum):
         Corresponds to the propagating state.
 
     """
+
     NONPROPAGATING = 1
     PROPAGATING = 2
 
@@ -24,6 +25,7 @@ class LaserDetailedState(enum.IntEnum):
 class LaserErrorCode(enum.IntEnum):
     """Laser error codes
     """
+
     ASCII_ERROR = 7301
     GENERAL_ERROR = 7302
     TIMEOUT_ERROR = 7303

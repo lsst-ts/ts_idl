@@ -27,6 +27,7 @@ class ExposureState(enum.IntEnum):
     """The event issued by the FiberSpectrograph CSC when exposures are
     started and/or stopped.
     """
+
     INTEGRATING = 1
     DONE = 2
     CANCELLED = 3

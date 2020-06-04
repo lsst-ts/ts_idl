@@ -19,7 +19,6 @@
 # You should have received a copy of the GNU General Public License
 
 __all__ = [
-    "TargetInstances",
     "LogLevel",
     "OffTypes",
     "OnOff",
