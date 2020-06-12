@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["EnabledState", "MotionState"]
+__all__ = ["EnabledState", "Louver", "MotionState"]
 
 import enum
 
@@ -30,6 +30,45 @@ class EnabledState(enum.IntEnum):
     DISABLED = 1
     ENABLED = 2
     FAULT = 3
+
+
+class Louver(enum.IntEnum):
+    """Louver name and associated array index.
+    """
+    A1 = 0
+    B1 = 1
+    A2 = 2
+    B2 = 3
+    B3 = 4
+    N1 = 5
+    M1 = 6
+    N2 = 7
+    M2 = 8
+    M3 = 9
+    C1 = 10
+    C2 = 11
+    C3 = 12
+    L1 = 13
+    L2 = 14
+    L3 = 15
+    E1 = 16
+    D2 = 17
+    E2 = 18
+    D3 = 19
+    E3 = 20
+    I1 = 21
+    H1 = 22
+    I2 = 23
+    H2 = 24
+    I3 = 25
+    H3 = 26
+    F1 = 27
+    G1 = 28
+    F2 = 29
+    G2 = 30
+    F3 = 31
+    G3 = 32
+    D1 = 33
 
 
 class MotionState(enum.IntEnum):
