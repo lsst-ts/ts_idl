@@ -24,7 +24,7 @@ def local_scheme(version):
     sal_version = os.environ.get("TS_SAL_VERSION", "0").strip("v")
     xml_version = os.environ.get("TS_XML_VERSION", "0").strip("v")
 
-    hash = [f"{int(v):02}" for v in f"{sal_version}.{xml_version}".split(".")]
+    hash = [f"{int(v):02}" for v in f"{xml_version}.{sal_version}".split(".")]
     hash_str = ""
     for h in hash:
         hash_str += h
