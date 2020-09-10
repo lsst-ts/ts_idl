@@ -3,7 +3,7 @@
 <qos_profile name="DDS DefaultQosProfile">
      <datareader_qos>
           <durability>
-                 <kind>TRANSIENT_DURABILITY_QOS</kind>
+                 <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
           </durability>
           <deadline>
                <period>
@@ -68,7 +68,7 @@
      </datareader_qos>
      <datawriter_qos>
           <durability>
-               <kind>TRANSIENT_DURABILITY_QOS</kind>
+               <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
           </durability>         
           <deadline>
                <period>
@@ -175,7 +175,7 @@
                <value></value>
           </topic_data>
           <durability>
-               <kind>TRANSIENT_DURABILITY_QOS</kind>
+               <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
           </durability>
           <durability_service>
                <service_cleanup_delay>
