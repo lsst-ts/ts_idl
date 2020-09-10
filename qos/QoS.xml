@@ -2,9 +2,6 @@
 <dds xmlns="http://www.omg.org/dds/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="file:DDS_QoSProfile.xsd">
     <qos_profile name="AckcmdProfile">
         <topic_qos>
-            <topic_data>
-                <value/>
-            </topic_data>
             <durability>
                 <kind>VOLATILE_DURABILITY_QOS</kind>
             </durability>
@@ -52,11 +49,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
             <transport_priority>
                 <value>0</value>
             </transport_priority>
@@ -107,14 +99,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
-            <user_data>
-                <value/>
-            </user_data>
             <ownership>
                 <kind>EXCLUSIVE_OWNERSHIP_QOS</kind>
             </ownership>
@@ -172,11 +156,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
             <transport_priority>
                 <value>0</value>
             </transport_priority>
@@ -186,9 +165,6 @@
                     <nanosec>DURATION_INFINITE_NSEC</nanosec>
                 </duration>
             </lifespan>
-            <user_data>
-                <value/>
-            </user_data>
             <ownership>
                 <kind>EXCLUSIVE_OWNERSHIP_QOS</kind>
             </ownership>
@@ -200,9 +176,6 @@
             </writer_data_lifecycle>
         </datawriter_qos>
         <domainparticipant_qos>
-            <user_data>
-                <value/>
-            </user_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -213,9 +186,6 @@
                 <coherent_access>false</coherent_access>
                 <ordered_access>false</ordered_access>
             </presentation>
-            <group_data>
-                <value/>
-            </group_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -226,9 +196,6 @@
                 <coherent_access>false</coherent_access>
                 <ordered_access>false</ordered_access>
             </presentation>
-            <group_data>
-                <value/>
-            </group_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -236,9 +203,6 @@
     </qos_profile>
     <qos_profile name="CommandProfile">
         <topic_qos>
-            <topic_data>
-                <value/>
-            </topic_data>
             <durability>
                 <kind>VOLATILE_DURABILITY_QOS</kind>
             </durability>
@@ -286,11 +250,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
             <transport_priority>
                 <value>0</value>
             </transport_priority>
@@ -341,14 +300,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
-            <user_data>
-                <value/>
-            </user_data>
             <ownership>
                 <kind>SHARED_OWNERSHIP_QOS</kind>
             </ownership>
@@ -406,11 +357,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
             <transport_priority>
                 <value>0</value>
             </transport_priority>
@@ -420,9 +366,6 @@
                     <nanosec>DURATION_INFINITE_NSEC</nanosec>
                 </duration>
             </lifespan>
-            <user_data>
-                <value/>
-            </user_data>
             <ownership>
                 <kind>SHARED_OWNERSHIP_QOS</kind>
             </ownership>
@@ -434,9 +377,6 @@
             </writer_data_lifecycle>
         </datawriter_qos>
         <domainparticipant_qos>
-            <user_data>
-                <value/>
-            </user_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -447,9 +387,6 @@
                 <coherent_access>false</coherent_access>
                 <ordered_access>false</ordered_access>
             </presentation>
-            <group_data>
-                <value/>
-            </group_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -460,9 +397,6 @@
                 <coherent_access>false</coherent_access>
                 <ordered_access>false</ordered_access>
             </presentation>
-            <group_data>
-                <value/>
-            </group_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -506,14 +440,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
-            <user_data>
-                <value/>
-            </user_data>
             <ownership>
                 <kind>EXCLUSIVE_OWNERSHIP_QOS</kind>
             </ownership>
@@ -571,11 +497,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
             <transport_priority>
                 <value>0</value>
             </transport_priority>
@@ -585,9 +506,6 @@
                     <nanosec>DURATION_INFINITE_NSEC</nanosec>
                 </duration>
             </lifespan>
-            <user_data>
-                <value/>
-            </user_data>
             <ownership>
                 <kind>EXCLUSIVE_OWNERSHIP_QOS</kind>
             </ownership>
@@ -599,9 +517,6 @@
             </writer_data_lifecycle>
         </datawriter_qos>
         <domainparticipant_qos>
-            <user_data>
-                <value/>
-            </user_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -612,9 +527,6 @@
                 <coherent_access>false</coherent_access>
                 <ordered_access>false</ordered_access>
             </presentation>
-            <group_data>
-                <value/>
-            </group_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -625,17 +537,11 @@
                 <coherent_access>false</coherent_access>
                 <ordered_access>false</ordered_access>
             </presentation>
-            <group_data>
-                <value/>
-            </group_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
         </publisher_qos>
         <topic_qos>
-            <topic_data>
-                <value/>
-            </topic_data>
             <durability>
                 <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
             </durability>
@@ -683,11 +589,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
             <transport_priority>
                 <value>0</value>
             </transport_priority>
@@ -740,14 +641,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
-            <user_data>
-                <value/>
-            </user_data>
             <ownership>
                 <kind>EXCLUSIVE_OWNERSHIP_QOS</kind>
             </ownership>
@@ -805,11 +698,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
             <transport_priority>
                 <value>0</value>
             </transport_priority>
@@ -819,9 +707,6 @@
                     <nanosec>DURATION_INFINITE_NSEC</nanosec>
                 </duration>
             </lifespan>
-            <user_data>
-                <value/>
-            </user_data>
             <ownership>
                 <kind>EXCLUSIVE_OWNERSHIP_QOS</kind>
             </ownership>
@@ -833,9 +718,6 @@
             </writer_data_lifecycle>
         </datawriter_qos>
         <domainparticipant_qos>
-            <user_data>
-                <value/>
-            </user_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -846,9 +728,6 @@
                 <coherent_access>false</coherent_access>
                 <ordered_access>false</ordered_access>
             </presentation>
-            <group_data>
-                <value/>
-            </group_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
@@ -859,17 +738,11 @@
                 <coherent_access>false</coherent_access>
                 <ordered_access>false</ordered_access>
             </presentation>
-            <group_data>
-                <value/>
-            </group_data>
             <entity_factory>
                 <autoenable_created_entities>true</autoenable_created_entities>
             </entity_factory>
         </publisher_qos>
         <topic_qos>
-            <topic_data>
-                <value/>
-            </topic_data>
             <durability>
                 <kind>VOLATILE_DURABILITY_QOS</kind>
             </durability>
@@ -917,11 +790,6 @@
                 <kind>KEEP_LAST_HISTORY_QOS</kind>
                 <depth>100</depth>
             </history>
-            <resource_limits>
-                <max_samples>LENGTH_UNLIMITED</max_samples>
-                <max_instances>LENGTH_UNLIMITED</max_instances>
-                <max_samples_per_instance>LENGTH_UNLIMITED</max_samples_per_instance>
-            </resource_limits>
             <transport_priority>
                 <value>0</value>
             </transport_priority>
