@@ -35,4 +35,4 @@ def get_idl_dir():
 
 def get_qos_path():
     """Return the path to the default QoS file."""
-    return get_pkg_root() / "qos" / "DDS_DefaultQoS_All.xml"
+    return get_pkg_root() / "qos" / "QoS.xml"
