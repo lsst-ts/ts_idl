@@ -405,7 +405,7 @@
     <qos_profile name="EventProfile">
         <topic_qos>
             <durability>
-                <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
+                <kind>TRANSIENT_DURABILITY_QOS</kind>
             </durability>
             <durability_service>
                 <service_cleanup_delay>
@@ -466,7 +466,7 @@
         </topic_qos>
         <datareader_qos>
             <durability>
-                <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
+                <kind>TRANSIENT_DURABILITY_QOS</kind>
             </durability>
             <deadline>
                 <period>
@@ -523,7 +523,7 @@
         </datareader_qos>
         <datawriter_qos>
             <durability>
-                <kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind>
+                <kind>TRANSIENT_DURABILITY_QOS</kind>
             </durability>
             <deadline>
                 <period>
