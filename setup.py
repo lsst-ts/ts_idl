@@ -21,7 +21,12 @@ __version__ = "{version}"
 
 
 def local_scheme(version):
-    sal_version = os.environ.get("TS_SAL_VERSION", "0").strip("v").replace("pre","")
+    sal_version = (
+        os.environ.get("TS_SAL_VERSION", "0")
+        .strip("v")
+        .replace("pre", "")
+        .split("_")[0]
+    )
     xml_version = os.environ.get("TS_XML_VERSION", "0").strip("v")
 
     hash = [f"{int(v):02}" for v in f"{xml_version}.{sal_version}".split(".")]
@@ -43,7 +48,7 @@ setuptools.setup(
     },
     packages=setuptools.find_namespace_packages(where="python"),
     data_files=[
-        (os.path.join(data_files_path, "qos"), ["qos/DDS_DefaultQoS_All.xml"]),
+        (os.path.join(data_files_path, "qos"), ["qos/QoS.xml"]),
         (os.path.join(data_files_path, "idl"), idl_files),
     ],
     include_package_data=True,

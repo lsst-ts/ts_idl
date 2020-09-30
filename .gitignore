@@ -4,6 +4,10 @@ config.log
 .sconf_temp
 *.pyc
 
+# setuptools
+.eggs
+*.egg-info
+
 # Built by sconsUtils
 version.py
 

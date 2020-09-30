@@ -75,7 +75,11 @@ class MotionState(enum.IntEnum):
     """Motion state.
     """
 
-    STOPPED = 1
-    STOPPING = 2
+    CLOSED = 1
+    CRAWLING = 2
     MOVING = 3
-    CRAWLING = 4
+    OPEN = 4
+    PARKED = 5
+    PARKING = 6
+    STOPPED = 7
+    STOPPING = 8
