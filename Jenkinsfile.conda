@@ -1,24 +1,28 @@
 pipeline {
     agent any
     environment {
-        dockerImageName = "lsstts/conda_package_builder:latest"
+        dockerImageName = "ts-dockerhub.lsst.org/conda_package_builder:latest"
         container_name = "idl_${BUILD_ID}_${JENKINS_NODE_COOKIE}"
     }
     parameters {
         string(defaultValue: '5.1.0', description: 'The XML Version, exclude any preceeding "v" characters: X.Y.Z', name: 'xml_version')
         string(defaultValue: '4.1.2', description: 'The ts_sal version, exclude any preceeding "v" characters: X.Y.Z', name: 'sal_version')
         booleanParam(defaultValue: false, description: "Is this a development build?", name: 'develop')
+        booleanParam(defaultValue: false, description: "Are we building the salobj conda package after this?", name: 'buildSalObjConda')
+        booleanParam(defaultValue: false, description: "Are we going on to building the CSC package after salobj?", name: 'buildCSCConda')
     }
 
     stages {
         stage("Pull Docker Image") {
             steps {
                 script {
-                    sh """
-                    docker pull ${dockerImageName}
-                    docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} \
-                        --env TS_SAL_VERSION=${sal_version} -v ${WORKSPACE}:/home/saluser/package_dir ${dockerImageName}
-                    """
+                    docker.withRegistry("https://ts-dockerhub.lsst.org/", "nexus3-lsst_jenkins") {
+                        sh """
+                        docker pull ${dockerImageName}
+                        docker run --name ${container_name} -di --rm --env TS_XML_VERSION=${params.xml_version} \
+                            --env TS_SAL_VERSION=${params.sal_version} -v ${WORKSPACE}:/home/saluser/package_dir ${dockerImageName}
+                        """
+                    }
                 }
             }
         }
@@ -55,20 +59,16 @@ pipeline {
                         sh """
                         docker exec ${container_name} sh -c "source ~/miniconda3/bin/activate && \
                             anaconda login --user ${anaconda_user} --password ${anaconda_pass} && \
-                            anaconda upload -u lsstts --force \
+                            anaconda upload -u lsstts --force --label dev\
                             ~/miniconda3/conda-bld/linux-64/ts-idl-*-py37_0.tar.bz2"
                         """
                     }
                 }
                 withCredentials([usernamePassword(credentialsId: 'pypi', passwordVariable: 'pypi_pass', usernameVariable: 'pypi_user')]) {
-                    script {
-                      sh """
-                          docker exec -u root --privileged \${container_name} sh -c \"chmod -R a+rw /home/saluser/package_dir\"
-                      """
-
+                    script {                                                                                                                                                                       
                       def RESULT = sh returnStatus: true, script: "docker exec -u saluser \${container_name} sh -c \"" +
                           "source ~/miniconda3/bin/activate && " +
-                          "source /opt/OpenSpliceDDS/V6.9.0/HDE/x86_64.linux/release.com && " +
+                          "source /opt/OpenSpliceDDS/V6.10.4/HDE/x86_64.linux/release.com && " +
                           "pip install --upgrade twine && " +
                           "cd ~/package_dir/ && " +
                           "cp -v /opt/lsst/ts_sal/idl/*idl idl/ && " +
@@ -97,10 +97,29 @@ pipeline {
                 }
             }
         }
+        stage('Trigger Job - Salobj Conda Package') {
+            when { expression { return env.buildSalObjConda.toBoolean() } }
+            steps {
+                script {
+                    def RESULT = sh (returnStdout: true, script: 
+                    """
+                    docker exec ${container_name} sh -c "
+                    cd ~/package_dir/ && 
+                    source ~/miniconda3/bin/activate > /dev/null && 
+                    conda install -q -y setuptools_scm > /dev/null && 
+                    python -c 'from setuptools_scm import get_version; print(get_version())'"
+                    """).trim()
+                     
+                    echo "Starting the SalObj_Conda_package/develop job; sal_version: ${SAL_Version}, xml_version: ${XML_Version} idl_version: ${RESULT}"
+                    build propagate: false, job: 'SalObj_Conda_package/develop', parameters: [booleanParam(name: 'develop', value: true), booleanParam(name: 'buildCSCConda', value: true), string(name: 'idl_version',value: RESULT )], wait: false
+                }
+            }
+        }
     }
     post {
         cleanup {
             sh """
+            docker exec -u root --privileged \${container_name} sh -c \"chmod -R a+rw /home/saluser/package_dir\"
             docker stop ${container_name}
             """
         }
@@ -112,3 +131,4 @@ pipeline {
         }
     }
 }
+
