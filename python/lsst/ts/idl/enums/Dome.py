@@ -35,6 +35,7 @@ class EnabledState(enum.IntEnum):
 class Louver(enum.IntEnum):
     """Louver name and associated array index.
     """
+
     A1 = 0
     B1 = 1
     A2 = 2
