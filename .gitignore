@@ -3,6 +3,7 @@
 config.log
 .sconf_temp
 *.pyc
+build
 
 # setuptools
 .eggs
@@ -23,3 +24,4 @@ pytest_session.txt
 
 # IDE
 .vscode
+.idea

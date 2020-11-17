@@ -138,6 +138,7 @@ class WrapStrategy(enum.IntEnum):
               smaller then `raDecTarget.timeOnTarget`.
     MAXTIMEONTARGET: Chooses the wrap side that maximises time on target.
     """
+
     NOUNWRAP = 1
     OPTIMIZE = 2
     MAXTIMEONTARGET = 3
