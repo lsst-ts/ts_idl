@@ -6,6 +6,13 @@
 Version History
 ===============
 
+v2.3.0
+------
+
+Changes:
+
+* Add ``MTMount`` enums.
+
 v2.2.1
 ------
 
