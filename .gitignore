@@ -8,6 +8,7 @@ build
 # setuptools
 .eggs
 *.egg-info
+dist
 
 # Built by sconsUtils
 version.py

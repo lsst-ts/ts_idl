@@ -1,8 +1,17 @@
-.. _Version_History:
+.. py:currentmodule:: lsst.ts.idl
+
+.. _lsst.ts.idl.version_history:
 
 ===============
 Version History
 ===============
+
+v2.2.1
+------
+
+Changes:
+
+* Fill out the documentation.
 
 v2.2.0
 ------
