@@ -18,26 +18,30 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["AtMountState", "M3ExitPort", "M3State"]
+__all__ = ["DriveState"]
 
 import enum
 
 
-class AtMountState(enum.IntEnum):
-    TRACKINGDISABLED = 1
-    TRACKINGENABLED = 2
-    STOPPING = 3
+class AxisState(enum.IntEnum):
+    """Axis state.
+    """
+
+    UNKNOWN = 0
+    OFF = enum.auto()
+    ENABLED = enum.auto()
+    FAULT = enum.auto()
 
 
-class M3ExitPort(enum.IntEnum):
-    NASMYTH1 = 1
-    NASMYTH2 = 2
-    PORT3 = 3
+class DriveState(enum.IntEnum):
+    """Drive state.
 
+    Reported as statusDrive by the low-level controller.
+    """
 
-class M3State(enum.IntEnum):
-    NASMYTH1 = 1
-    NASMYTH2 = 2
-    PORT3 = 3
-    INMOTION = 4
-    UNKNOWNPOSITION = 5
+    UNKNOWN = 0
+    OFF = enum.auto()
+    MOVING = enum.auto()
+    STOPPING = enum.auto()
+    STOPPED = enum.auto()
+    FAULT = enum.auto()
