@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["DetailedState"]
+__all__ = ["DetailedState","HardpointActuatorMotionStates"]
 
 import enum
 
@@ -38,3 +38,10 @@ class DetailedState(enum.IntEnum):
     LOWERINGENGINEERING = 12
     LOWERINGFAULT = 13
     PROFILEHARDPOINTCORRECTIONS = 14
+
+class HardpointActuatorMotionStates(enum.IntEnum):
+    STANDBY = 0
+    CHASING = 1
+    STEPPING = 2
+    QUICKPOSITIONING = 3
+    FINEPOSITIONING = 4
