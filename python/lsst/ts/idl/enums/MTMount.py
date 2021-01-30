@@ -29,7 +29,12 @@ class AxisState(enum.IntEnum):
 
     UNKNOWN = 0
     OFF = enum.auto()
+    IDLE = enum.auto()
     ENABLED = enum.auto()
+    DISCRETE_MOVE = enum.auto()
+    JOG_MOVE = enum.auto()
+    TRACKING = enum.auto()
+    STOPPING = enum.auto()
     FAULT = enum.auto()
 
 
@@ -45,3 +50,25 @@ class DriveState(enum.IntEnum):
     STOPPING = enum.auto()
     STOPPED = enum.auto()
     FAULT = enum.auto()
+
+
+class SubsystemId(enum.IntEnum):
+    AZIMUTH_AXIS = 100
+    AZIMUTH_DRIVE = 200
+    AZIMUTH_CABLE_WRAP = 300
+    ELEVATION_AXIS = 400
+    ELEVATION_DRIVE = 500
+    MAIN_POWER_SUPPLY = 600
+    ENCODER_INTERFACE_BOX = 700
+    OIL_SUPPLY_SYSTEM = 800
+    MIRROR_COVERS = 900
+    CAMERA_CABLE_WRAP = 1000
+    BALANCE = 1100
+    DEPLOYABLE_PLATFORM = 1200
+    CABINET = 1300
+    LOCKING_PINS = 1400
+    MIRROR_COVER_LOCKS = 1500
+    AZIMUTH_THERMAL = 1600
+    ELEVATION_THERMAL = 1700
+    INTERLOCK = 1800
+    TOP_END_CHILLER = 2200
