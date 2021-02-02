@@ -6,6 +6,18 @@
 Version History
 ===============
 
+v2.4.0
+------
+
+Changes
+
+* ATMCS: update enumerations.
+* MTMount: add `SubsystemId` and update `AxisState` to match new information from Tekniker.
+* MTM1M3: add `HardpointActuatorMotionStates`.
+* Add support for ``pre-commit``.
+  See README.rst for instructions.
+* Convert Jenkinsfile.conda to use the shared library.
+
 v2.3.0
 ------
 
