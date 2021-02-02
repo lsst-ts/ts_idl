@@ -24,20 +24,24 @@ import enum
 
 
 class AtMountState(enum.IntEnum):
-    TRACKINGDISABLED = 1
-    TRACKINGENABLED = 2
-    STOPPING = 3
+    REMOTECONTROL = 6
+    HANDPADDLECONTROL = 7
+    TRACKINGDISABLED = 8
+    TRACKINGENABLED = 9
+    STOPPING = 10
 
 
 class M3ExitPort(enum.IntEnum):
-    NASMYTH1 = 1
-    NASMYTH2 = 2
-    PORT3 = 3
+    NASMYTH1 = 6
+    NASMYTH2 = 7
+    PORT3 = 8
 
 
 class M3State(enum.IntEnum):
-    NASMYTH1 = 1
-    NASMYTH2 = 2
-    PORT3 = 3
-    INMOTION = 4
-    UNKNOWNPOSITION = 5
+    REMOTECONTROL = 1
+    HANDPADDLECONTROL = 2
+    NASMYTH1 = 6
+    NASMYTH2 = 7
+    PORT3 = 8
+    INMOTION = 9
+    UNKNOWNPOSITION = 10
