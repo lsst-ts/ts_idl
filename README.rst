@@ -28,3 +28,9 @@ To generate new enum files:
 * Use UPPERCASE for enum values. This is the python convention and avoids problems from using ``None`` as a value.
 * Match the XML exactly (other than case), to make the mapping between XML and python more obvious and to allow automatic generation someday.
 * No underscore between words, to simplify automatic generation.
+
+This code uses ``pre-commit`` to maintain ``black`` formatting and ``flake8`` compliance.
+To enable this, run the following commands once (the first removes the previous pre-commit hook)::
+
+    git config --unset-all core.hooksPath
+    pre-commit install
