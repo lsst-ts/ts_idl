@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["get_pkg_root", "get_idl_dir", "get_qos_path"]
+__all__ = ["get_pkg_root", "get_idl_dir"]
 
 import pathlib
 
@@ -31,8 +31,3 @@ def get_pkg_root():
 def get_idl_dir():
     """Return the path to the ``idl`` dir within this package."""
     return get_pkg_root() / "idl"
-
-
-def get_qos_path():
-    """Return the path to the default QoS file."""
-    return get_pkg_root() / "qos" / "QoS.xml"

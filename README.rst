@@ -4,7 +4,6 @@ Contents:
 
 * idl: IDL files. There should be one file for each SAL component you want to communication with using ``ts_salobj``.
 * python: functions to get the IDL directory and QoS file, plus CSC-specific enums.
-* qos: The default DDS quality of service file used by ``ts_salobj``.
 * ups: Files for using this package with eups.
 
 To use this package:
