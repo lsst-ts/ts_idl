@@ -1,4 +1,4 @@
-# This file is part of ts_idl
+# This file is part of ts_idl.
 #
 # Developed for Vera Rubin Observatory.
 # This product includes software developed by the LSST Project
@@ -18,10 +18,29 @@
 #
 # You should have received a copy of the GNU General Public License
 
-try:
-    from .version import *
-except ImportError:
-    __version__ = "?"
-
-from .utils import *
-from . import enums
+from . import ATCamera
+from . import ATDome
+from . import ATHexapod
+from . import ATMCS
+from . import ATMonochromator
+from . import ATPneumatics
+from . import ATPtg
+from . import ATSpectrograph
+from . import ATThermoelectricCooler
+from . import Electrometer
+from . import FiberSpectrograph
+from . import Guider
+from . import LinearStage
+from . import MTAOS
+from . import MTDome
+from . import MTHexapod
+from . import MTM1M3
+from . import MTM2
+from . import MTMount
+from . import MTPtg
+from . import MTRotator
+from . import PMD
+from . import Script
+from . import ScriptQueue
+from . import TunableLaser
+from . import Watcher
