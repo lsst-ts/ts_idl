@@ -28,6 +28,6 @@ class GuiderStatus(enum.IntEnum):
     """
 
     STOPPED = 1
-    STARTING = auto()
-    GUIDING = auto()
-    ERROR = auto()
+    STARTING = enum.auto()
+    GUIDING = enum.auto()
+    ERROR = enum.auto()
