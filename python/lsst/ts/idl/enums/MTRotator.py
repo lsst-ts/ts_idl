@@ -44,7 +44,7 @@ class ControllerState(enum.IntEnum):
 class OfflineSubstate(enum.IntEnum):
     """Controller substate for the OFFLINE state.
 
-    Value reported in ``telemetry.offline_substate ``.
+    Value reported in ``telemetry.offline_substate``.
 
     This is enum ``OfflineSubStates`` in Moog code.
     """
