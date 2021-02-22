@@ -1,4 +1,4 @@
-# This file is part of ts_idl
+# This file is part of ts_idl.
 #
 # Developed for Vera Rubin Observatory.
 # This product includes software developed by the LSST Project
@@ -18,16 +18,30 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["get_pkg_root", "get_idl_dir"]
+__all__ = ["Mode", "FilterType"]
 
-import pathlib
-
-
-def get_pkg_root():
-    """Return the root directory of this package."""
-    return pathlib.Path(__file__).resolve().parents[4]
+import enum
 
 
-def get_idl_dir():
-    """Return the path to the ``idl`` dir within this package."""
-    return get_pkg_root() / "idl"
+class Mode(enum.IntEnum):
+    """MTAOS wavefront sensing mode.
+
+    1 - LSST Camera full array mode.
+    2 - LSST Camera corner wavefront sensors.
+    3 - ComCam full array mode
+
+    """
+
+    LsstCamFAM = 1
+    LsstCamCWS = enum.auto()
+    ComCam = enum.auto()
+
+
+class FilterType(enum.IntEnum):
+    u = 1
+    g = enum.auto()
+    r = enum.auto()
+    i = enum.auto()
+    z = enum.auto()
+    y = enum.auto()
+    ref = enum.auto()

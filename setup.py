@@ -1,7 +1,7 @@
-import sys, os
+import sys
+import os
 import setuptools
 
-# from setuptools import setup, find_namespace_packages
 import pathlib
 import glob
 
@@ -47,10 +47,7 @@ setuptools.setup(
         "local_scheme": local_scheme,
     },
     packages=setuptools.find_namespace_packages(where="python"),
-    data_files=[
-        (os.path.join(data_files_path, "qos"), ["qos/QoS.xml"]),
-        (os.path.join(data_files_path, "idl"), idl_files),
-    ],
+    data_files=[(os.path.join(data_files_path, "idl"), idl_files)],
     include_package_data=True,
     # scripts=[],
     # tests_require=tests_require,

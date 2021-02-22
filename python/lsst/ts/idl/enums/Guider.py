@@ -1,4 +1,4 @@
-# This file is part of ts_idl
+# This file is part of ts_idl.
 #
 # Developed for Vera Rubin Observatory.
 # This product includes software developed by the LSST Project
@@ -18,16 +18,16 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["get_pkg_root", "get_idl_dir"]
+__all__ = ["GuiderStatus"]
 
-import pathlib
-
-
-def get_pkg_root():
-    """Return the root directory of this package."""
-    return pathlib.Path(__file__).resolve().parents[4]
+import enum
 
 
-def get_idl_dir():
-    """Return the path to the ``idl`` dir within this package."""
-    return get_pkg_root() / "idl"
+class GuiderStatus(enum.IntEnum):
+    """Guider status.
+    """
+
+    STOPPED = 1
+    STARTING = enum.auto()
+    GUIDING = enum.auto()
+    ERROR = enum.auto()

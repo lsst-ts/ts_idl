@@ -1,6 +1,6 @@
-# This file is part of ts_idl
+# This file is part of ts_idl.
 #
-# Developed for Vera Rubin Observatory.
+# Developed for the LSST Telescope and Site Systems.
 # This product includes software developed by the LSST Project
 # (https://www.lsst.org).
 # See the COPYRIGHT file at the top-level directory of this distribution
@@ -17,17 +17,18 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-__all__ = ["get_pkg_root", "get_idl_dir"]
-
+import unittest
 import pathlib
 
-
-def get_pkg_root():
-    """Return the root directory of this package."""
-    return pathlib.Path(__file__).resolve().parents[4]
+from lsst.ts import salobj
 
 
-def get_idl_dir():
-    """Return the path to the ``idl`` dir within this package."""
-    return get_pkg_root() / "idl"
+class BlackTestCase(unittest.TestCase):
+    def test_black_formatted(self):
+        salobj.assert_black_formatted(pathlib.Path(__file__).parents[1])
+
+
+if __name__ == "__main__":
+    unittest.main()
