@@ -18,16 +18,29 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["GuiderStatus"]
-
-import enum
-
-
-class GuiderStatus(enum.IntEnum):
-    """Guider status.
-    """
-
-    STOPPED = 1
-    STARTING = enum.auto()
-    GUIDING = enum.auto()
-    ERROR = enum.auto()
+from . import ATCamera
+from . import ATDome
+from . import ATHexapod
+from . import ATMCS
+from . import ATMonochromator
+from . import ATPneumatics
+from . import ATPtg
+from . import ATSpectrograph
+from . import ATThermoelectricCooler
+from . import Electrometer
+from . import FiberSpectrograph
+from . import Guider
+from . import LinearStage
+from . import MTAOS
+from . import MTDome
+from . import MTHexapod
+from . import MTM1M3
+from . import MTM2
+from . import MTMount
+from . import MTPtg
+from . import MTRotator
+from . import PMD
+from . import Script
+from . import ScriptQueue
+from . import TunableLaser
+from . import Watcher

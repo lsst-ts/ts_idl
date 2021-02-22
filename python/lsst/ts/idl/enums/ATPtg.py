@@ -132,12 +132,15 @@ class TargetTypes(enum.IntEnum):
 class WrapStrategy(enum.IntEnum):
     """Defines wrap strategy enumeration.
 
-    NOUNWRAP: Do not attempt to unwrap azimuth. If target is unreachable,
-              reject the command.
-    OPTIMIZE: Optimize wrap strategy based on `raDecTarget.timeOnTarget`.
-              It will only attempt to unwrap if time available on target is
-              smaller then `raDecTarget.timeOnTarget`.
-    MAXTIMEONTARGET: Chooses the wrap side that maximises time on target.
+    NOUNWRAP:
+        Do not attempt to unwrap azimuth. If target is unreachable,
+        reject the command.
+    OPTIMIZE:
+        Optimize wrap strategy based on ``raDecTarget.timeOnTarget``.
+        It will only attempt to unwrap if time available on target is
+        smaller then ``raDecTarget.timeOnTarget``.
+    MAXTIMEONTARGET:
+        Choose the wrap that maximises time on target.
     """
 
     NOUNWRAP = 1

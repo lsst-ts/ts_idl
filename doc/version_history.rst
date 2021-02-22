@@ -6,6 +6,21 @@
 Version History
 ===============
 
+v3.0.0
+------
+
+Changes:
+
+* Removed the quality of service file `qos/QoS.xml` and function `get_qos_path`.
+  Use the quality of service file in ts_ddsconfig instead.
+* Import all enums modules when lsst.ts.idl is imported.
+  This catches any errors that would prevent import.
+* Added enumeration modules `enums.Guider`, `enums.MTAOS`, and `enums.PMD`.
+* Updated enumeration modules `enums.ATPtg` and `enums.MTPtg` for ts_xml 8.
+* Add unit tests.
+* Add API documentation to the developer's guide.
+* Updated ``doc/conf.py`` for documenteer 0.6.
+
 v2.4.0
 ------
 

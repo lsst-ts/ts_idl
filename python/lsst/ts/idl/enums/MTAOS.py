@@ -33,15 +33,15 @@ class Mode(enum.IntEnum):
     """
 
     LsstCamFAM = 1
-    LsstCamCWS = auto()
-    ComCam = auto()
+    LsstCamCWS = enum.auto()
+    ComCam = enum.auto()
 
 
 class FilterType(enum.IntEnum):
     u = 1
-    g = auto()
-    r = auto()
-    i = auto()
-    z = auto()
-    y = auto()
-    ref = auto()
+    g = enum.auto()
+    r = enum.auto()
+    i = enum.auto()
+    z = enum.auto()
+    y = enum.auto()
+    ref = enum.auto()

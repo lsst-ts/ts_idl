@@ -18,9 +18,10 @@
 #
 # You should have received a copy of the GNU General Public License
 
-from .utils import *
-
 try:
     from .version import *
 except ImportError:
     __version__ = "?"
+
+from .utils import *
+from . import enums

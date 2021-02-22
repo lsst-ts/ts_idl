@@ -1,6 +1,6 @@
 # This file is part of ts_idl.
 #
-# Developed for Vera Rubin Observatory.
+# Developed for the LSST Telescope and Site Systems.
 # This product includes software developed by the LSST Project
 # (https://www.lsst.org).
 # See the COPYRIGHT file at the top-level directory of this distribution
@@ -17,17 +17,18 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-__all__ = ["GuiderStatus"]
+import unittest
+import pathlib
 
-import enum
+from lsst.ts import salobj
 
 
-class GuiderStatus(enum.IntEnum):
-    """Guider status.
-    """
+class BlackTestCase(unittest.TestCase):
+    def test_black_formatted(self):
+        salobj.assert_black_formatted(pathlib.Path(__file__).parents[1])
 
-    STOPPED = 1
-    STARTING = enum.auto()
-    GUIDING = enum.auto()
-    ERROR = enum.auto()
+
+if __name__ == "__main__":
+    unittest.main()
