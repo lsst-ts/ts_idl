@@ -77,7 +77,8 @@ class CoordFrame(enum.IntEnum):
 
 class RotFrame(enum.IntEnum):
     TARGET = 1
-    FIXED = 2
+    AZEL = 2
+    FIXED = 3
 
 
 class RotMode(enum.IntEnum):
