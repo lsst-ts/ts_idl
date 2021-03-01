@@ -73,18 +73,17 @@ class EnabledSubstate(enum.IntEnum):
 class ApplicationStatus(enum.IntFlag):
     """Bit masks for the value reported in ``telemetry.application_status``.
 
-    These are constants, with the same names and values, in Moog code.
+    These are from https://github.com/lsst-ts/ts_rotator_controller/blob/master/include/actuatorTlm.h  # noqa
     """
 
-    HEX_FOLLOWING_ERROR_MASK = 0x1
-    HEX_MOVE_COMPLETE_MASK = 0x2
+    EUI_CONNECTED = 0x4
     COMMAND_REJECT_MASK = 0x20
     SAFETY_INTERLOCK = 0x40
     EXTEND_LIMIT_SWITCH = 0x80
     RETRACT_LIMIT_SWITCH = 0x100
     ETHERCAT_PROBLEM = 0x200
     DDS_COMMAND_SOURCE = 0x400
-    MOTION_TIMEOUT = 0x800
+    DDS_CONNECTED = 0x1000
     DRIVE_FAULT = 0x2000
     SIMULINK_FAULT = 0x4000
     ENCODER_FAULT = 0x8000
