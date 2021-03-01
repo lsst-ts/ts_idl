@@ -18,16 +18,23 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["ControllerState", "OfflineSubstate", "EnabledSubstate", "ApplicationStatus"]
+__all__ = [
+    "ApplicationStatus",
+    "ControllerState",
+    "EnabledSubstate",
+    "OfflineSubstate",
+    "SalIndex",
+]
 
 import enum
 
+
 # MTHexapod and MTRotator have the same enum values for
-# ControllerState, OfflineSubstate, and EnabledSubstate
+# ControllerState, OfflineSubstate, and EnabledSubstate.
 from .MTRotator import (
     ControllerState,
-    OfflineSubstate,
     EnabledSubstate,
+    OfflineSubstate,
 )
 
 
@@ -60,3 +67,8 @@ class ApplicationStatus(enum.IntFlag):
     DRIVE_FAULT = 0x2000
     SIMULINK_FAULT = 0x4000
     LUT_TABLE_INVALID = 0x8000
+
+
+class SalIndex(enum.IntEnum):
+    CAMERA_HEXAPOD = 1
+    M2_HEXAPOD = 2

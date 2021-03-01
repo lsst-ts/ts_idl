@@ -77,7 +77,7 @@ class ApplicationStatus(enum.IntFlag):
     """
 
     EUI_CONNECTED = 0x4
-    COMMAND_REJECT_MASK = 0x20
+    COMMAND_REJECTED = 0x20
     SAFETY_INTERLOCK = 0x40
     EXTEND_LIMIT_SWITCH = 0x80
     RETRACT_LIMIT_SWITCH = 0x100
