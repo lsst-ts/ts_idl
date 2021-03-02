@@ -6,6 +6,30 @@
 Version History
 ===============
 
+v3.1.0
+------
+
+Deprecated:
+
+* `enums.MTHexapod.ApplicationStatus.HEX_MOVE_COMPLETE_MASK` is deprecated;
+  use `enums.MTHexapod.ApplicationStatus.MOVE_COMPLETE` instead.
+
+Changes:
+
+* Added `enums.MTHexapod.SalIndex`.
+* Updated `enums.MTHexapod.ApplicationStatus`:
+
+    * Added ``EUI_CONNECTED``, ``RELATIVE_MOVE_MODE``, ``SYNC_MODE``, and ``DDS_CONNECTED``.
+    * Changed incorrect ``ENCODER_FAULT`` to ``LUT_TABLE_INVALID``.
+    * Renamed ``HEX_MOVE_COMPLETE_MASK`` to ``MOVE_COMPLETE``,
+      but also retain the old name, for now, because it is used in code.
+    * Renamed ``HEX_FOLLOWING_ERROR`` to ``FOLLOWING_ERROR``.
+* Updated `enums.MTRotator.ApplicationStatus`:
+
+    * Added ``EUI_CONNECTED`` and ``DDS_CONNECTED``.
+    * Removed values that only apply to MTHexapod:
+     ``HEX_MOVE_COMPLETE_MASK``, ``HEX_FOLLOWING_ERROR``, and ``MOTION_TIMEOUT``.
+
 v3.0.0
 ------
 
