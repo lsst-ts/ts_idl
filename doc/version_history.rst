@@ -6,6 +6,13 @@
 Version History
 ===============
 
+v3.1.1
+------
+
+Changes:
+
+* Updated the conda build recipe to create a `noarch` package.
+
 v3.1.0
 ------
 
