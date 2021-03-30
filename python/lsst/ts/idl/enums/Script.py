@@ -25,8 +25,7 @@ import enum
 
 
 class ScriptState(enum.IntEnum):
-    """ScriptState constants.
-    """
+    """ScriptState constants."""
 
     UNKNOWN = 0
     """Script state is unknown."""

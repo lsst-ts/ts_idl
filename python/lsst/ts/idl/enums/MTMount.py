@@ -24,8 +24,7 @@ import enum
 
 
 class AxisState(enum.IntEnum):
-    """Axis state.
-    """
+    """Axis state."""
 
     UNKNOWN = 0
     OFF = enum.auto()

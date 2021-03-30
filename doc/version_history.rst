@@ -6,6 +6,13 @@
 Version History
 ===============
 
+v3.1.2
+------
+
+Changes:
+
+* Format the code with black 20.8b1.
+
 v3.1.1
 ------
 

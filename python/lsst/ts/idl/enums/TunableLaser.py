@@ -23,8 +23,7 @@ class LaserDetailedState(enum.IntEnum):
 
 
 class LaserErrorCode(enum.IntEnum):
-    """Laser error codes
-    """
+    """Laser error codes"""
 
     ASCII_ERROR = 7301
     GENERAL_ERROR = 7302
