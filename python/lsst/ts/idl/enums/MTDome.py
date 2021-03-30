@@ -24,8 +24,7 @@ import enum
 
 
 class EnabledState(enum.IntEnum):
-    """Drive enabled state.
-    """
+    """Drive enabled state."""
 
     DISABLED = 1
     ENABLED = 2
@@ -33,8 +32,7 @@ class EnabledState(enum.IntEnum):
 
 
 class Louver(enum.IntEnum):
-    """Louver name and associated array index.
-    """
+    """Louver name and associated array index."""
 
     A1 = 0
     B1 = 1
@@ -73,8 +71,7 @@ class Louver(enum.IntEnum):
 
 
 class MotionState(enum.IntEnum):
-    """Motion state.
-    """
+    """Motion state."""
 
     CLOSED = 1
     CRAWLING = 2

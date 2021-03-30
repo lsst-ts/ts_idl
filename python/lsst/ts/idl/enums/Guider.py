@@ -24,8 +24,7 @@ import enum
 
 
 class GuiderStatus(enum.IntEnum):
-    """Guider status.
-    """
+    """Guider status."""
 
     STOPPED = 1
     STARTING = enum.auto()
