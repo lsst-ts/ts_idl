@@ -6,6 +6,13 @@
 Version History
 ===============
 
+v3.1.3
+------
+
+Changes:
+
+* Added enums and dictionaries for HVAC.
+
 v3.1.2
 ------
 
