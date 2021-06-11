@@ -12,6 +12,7 @@ v3.1.3
 Changes:
 
 * Added enums and dictionaries for HVAC.
+* Added enum values for MTDome.
 
 v3.1.2
 ------
