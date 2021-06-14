@@ -73,6 +73,7 @@ class Louver(enum.IntEnum):
 class MotionState(enum.IntEnum):
     """Motion state."""
 
+    FAULT = 0
     CLOSED = 1
     CRAWLING = 2
     MOVING = 3
@@ -81,3 +82,5 @@ class MotionState(enum.IntEnum):
     PARKING = 6
     STOPPED = 7
     STOPPING = 8
+    STOPPING_BRAKING = 9
+    STOPPED_BRAKED = 10
