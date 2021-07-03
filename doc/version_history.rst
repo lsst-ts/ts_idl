@@ -6,6 +6,14 @@
 Version History
 ===============
 
+v3.2.0
+------
+
+Changes:
+
+* Overhauled MTMount enums.
+* Deleted deprecated ``enums.MTHexapod.ApplicationStatus.HEX_MOVE_COMPLETE_MASK``.
+
 v3.1.3
 ------
 

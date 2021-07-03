@@ -46,7 +46,6 @@ class ApplicationStatus(enum.IntFlag):
 
     FOLLOWING_ERROR = 0x1
     MOVE_COMPLETE = 0x2
-    HEX_MOVE_COMPLETE_MASK = 0x2  # Backwards compatible name
     EUI_CONNECTED = 0x4
     RELATIVE_MOVE_MODE = 0x8
     SYNC_MODE = 0x10
