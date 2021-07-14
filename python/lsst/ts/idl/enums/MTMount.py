@@ -55,7 +55,7 @@ class Commander(enum.IntEnum):
     """Who commands the low-level controller."""
 
     NONE = 0
-    TCS = 1
+    CSC = 1
     EUI = 2
     HDD = 3
 
