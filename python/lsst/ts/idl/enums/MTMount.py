@@ -20,6 +20,7 @@
 
 __all__ = [
     "AxisMotionState",
+    "Commander",
     "DeployableMotionState",
     "ElevationLockingPinMotionState",
     "LimitsMask",
