@@ -20,11 +20,10 @@
 
 __all__ = [
     "AxisMotionState",
-    "BasicPowerState",
     "DeployableMotionState",
     "ElevationLockingPinMotionState",
-    "FancyPowerState",
     "LimitsMask",
+    "PowerState",
     "System",
 ]
 
@@ -42,20 +41,11 @@ class AxisMotionState(enum.IntEnum):
     TRACKING_PAUSED = 5
 
 
-class BasicPowerState(enum.IntEnum):
-    """Power state for systems that turn on and off quickly."""
-
-    UNKNOWN = 15
-    OFF = 0
-    ON = 1
-    FAULT = 2
-
-
 class Commander(enum.IntEnum):
     """Who commands the low-level controller."""
 
     NONE = 0
-    TCS = 1
+    CSC = 1
     EUI = 2
     HDD = 3
 
@@ -84,20 +74,6 @@ class ElevationLockingPinMotionState(enum.IntEnum):
     MISMATCH = 4
 
 
-class FancyPowerState(enum.IntEnum):
-    """Power state for systems that turn on or off slowly.
-
-    Such as the oil supply system.
-    """
-
-    UNKNOWN = 15
-    OFF = 0
-    ON = 1
-    TURNING_ON = 2
-    TURNING_OFF = 3
-    FAULT = 4
-
-
 class LimitsMask(enum.IntFlag):
     """Bit masks for the various limits.
 
@@ -118,6 +94,23 @@ class LimitsMask(enum.IntFlag):
     OPERATIONAL_L1_MAX = 0x10
 
 
+class PowerState(enum.IntEnum):
+    """Power state of a system or motion controller.
+
+    Also used for motion controller state.
+
+    Note that only a few systems (and no motion controllers)
+    use TURNING_ON and TURNING_OFF. The oil supply system is one.
+    """
+
+    OFF = 0
+    ON = 1
+    FAULT = 2
+    TURNING_ON = 3
+    TURNING_OFF = 4
+    UNKNOWN = 15
+
+
 class System(enum.IntEnum):
     AZIMUTH = 0
     ELEVATION = 1
@@ -127,12 +120,12 @@ class System(enum.IntEnum):
     MIRROR_COVER_LOCKS = 5
     AZIMUTH_CABLE_WRAP = 6
     LOCKING_PINS = 7
-    DEPLOYABLE_PLATFORM = 8
+    DEPLOYABLE_PLATFORMS = 8
     OIL_SUPPLY_SYSTEM = 9
     AZIMUTH_DRIVES_THERMAL = 10
     ELEVATION_DRIVES_THERMAL = 11
     AZ0101_CABINET_THERMAL = 12
-    MODBUS_TEMPERATURE_CONTROLLER = 13
+    MODBUS_TEMPERATURE_CONTROLLERS = 13
     MAIN_CABINET = 14
     MAIN_AXES_POWER_SUPPLY = 15
     TOP_END_CHILLER = 16
