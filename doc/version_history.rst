@@ -11,8 +11,8 @@ v3.2.0
 
 Changes:
 
-* Overhauled MTMount enums to match ts_xml 9.2.
-  These changes require ts_xml 9.2.
+* Overhauled MTMount enums to match ts_xml 10.0.
+  These changes require ts_xml 10.0.
 * Added BumpTestProgress enum to MTM1M3.
 * Deleted deprecated ``enums.MTHexapod.ApplicationStatus.HEX_MOVE_COMPLETE_MASK``.
 
@@ -59,8 +59,7 @@ Changes:
 * Updated `enums.MTRotator.ApplicationStatus`:
 
     * Added ``EUI_CONNECTED`` and ``DDS_CONNECTED``.
-    * Removed values that only apply to MTHexapod:
-     ``HEX_MOVE_COMPLETE_MASK``, ``HEX_FOLLOWING_ERROR``, and ``MOTION_TIMEOUT``.
+    * Removed values that only apply to MTHexapod: ``HEX_MOVE_COMPLETE_MASK``, ``HEX_FOLLOWING_ERROR``, and ``MOTION_TIMEOUT``.
 
 v3.0.0
 ------
