@@ -11,9 +11,10 @@ v3.2.0
 
 Changes:
 
+* Added BumpTestProgress enum to MTM1M3.
+* Added GIS enums.
 * Overhauled MTMount enums to match ts_xml 10.0.
   These changes require ts_xml 10.0.
-* Added BumpTestProgress enum to MTM1M3.
 * Deleted deprecated ``enums.MTHexapod.ApplicationStatus.HEX_MOVE_COMPLETE_MASK``.
 
 v3.1.3
