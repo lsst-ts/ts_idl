@@ -6,6 +6,16 @@
 Version History
 ===============
 
+v3.2.0
+------
+
+Changes:
+
+* Overhauled MTMount enums to match ts_xml 9.2.
+  These changes require ts_xml 9.2.
+* Added BumpTestProgress enum to MTM1M3.
+* Deleted deprecated ``enums.MTHexapod.ApplicationStatus.HEX_MOVE_COMPLETE_MASK``.
+
 v3.1.3
 ------
 
