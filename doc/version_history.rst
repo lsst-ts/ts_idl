@@ -6,6 +6,15 @@
 Version History
 ===============
 
+v3.4.0
+------
+
+* Add ErrorCode enums to MTHexapod and MTRotator
+* Update MTDome enum values.
+* Use pytest-black instead of a dedicated unit test.
+* Modernize setup.cfg.
+* Fix a flake8 error in HVAC: doc string too long.
+
 v3.3.0
 ------
 
