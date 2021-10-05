@@ -18,7 +18,13 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["ControllerState", "OfflineSubstate", "EnabledSubstate", "ApplicationStatus"]
+__all__ = [
+    "ControllerState",
+    "OfflineSubstate",
+    "EnabledSubstate",
+    "ApplicationStatus",
+    "ErrorCode",
+]
 
 import enum
 
@@ -87,3 +93,19 @@ class ApplicationStatus(enum.IntFlag):
     DRIVE_FAULT = 0x2000
     SIMULINK_FAULT = 0x4000
     ENCODER_FAULT = 0x8000
+
+
+class ErrorCode(enum.IntEnum):
+    """Error codes.
+
+    The values are:
+
+    * CONTROLLER_FAULT: The low-level controller went to fault state.
+      Note that the CSC will trigger this if the camera cable wrap is not
+      following closely enough, or if a user issues the ``fault`` command.
+    * CONNECTION_LOST: The CSC lost communication with the low-level
+      controller.
+    """
+
+    CONTROLLER_FAULT = 1
+    CONNECTION_LOST = 2

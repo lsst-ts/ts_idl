@@ -14,6 +14,7 @@ Overview
 
 The ts_idl package provides "OMG IDL" files descripting the DDS interface for our SAL/DDS components
 and a package ``lsst.ts.idl.enum`` containing Python enum classes matching enumerations in our SAL XML files.
+See the :ref:`Developer Guide <lsst.ts.idl.developer_guide>` for the enum documentation.
 
 Older versions include a ``qos`` directory containing DDS quality of service configuration,
 but new code should obtain that information from the ``ts_ddsconfig`` package..

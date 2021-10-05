@@ -70,7 +70,8 @@ class DeviceId(IntEnum):
 
 
 # Dict of index: DeviceId, where index is the index of the device in DeviceId.
-# Used to understand the bits in the device_ids field of the deviceEnabled event.
+# Used to understand the bits in the device_ids field of the deviceEnabled
+# event.
 DeviceIndex = {i: dev_id for i, dev_id in enumerate(DeviceId)}
 
 # Dict grouping MQTT topics representing HVAC devices together.
