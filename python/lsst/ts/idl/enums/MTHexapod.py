@@ -24,6 +24,7 @@ __all__ = [
     "EnabledSubstate",
     "OfflineSubstate",
     "SalIndex",
+    "ErrorCode",
 ]
 
 import enum
@@ -71,3 +72,17 @@ class ApplicationStatus(enum.IntFlag):
 class SalIndex(enum.IntEnum):
     CAMERA_HEXAPOD = 1
     M2_HEXAPOD = 2
+
+
+class ErrorCode(enum.IntEnum):
+    """Error codes.
+
+    The values are:
+
+    * CONTROLLER_FAULT: The low-level controller went to fault state.
+    * CONNECTION_LOST: The CSC lost communication with the low-level
+      controller.
+    """
+
+    CONTROLLER_FAULT = 1
+    CONNECTION_LOST = 2

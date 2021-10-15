@@ -35,45 +35,45 @@ class Louver(enum.IntEnum):
     """Louver name and associated array index."""
 
     A1 = 0
-    B1 = 1
-    A2 = 2
+    A2 = 1
+    B1 = 2
     B2 = 3
     B3 = 4
-    N1 = 5
-    M1 = 6
-    N2 = 7
-    M2 = 8
-    M3 = 9
-    C1 = 10
-    C2 = 11
-    C3 = 12
-    L1 = 13
-    L2 = 14
-    L3 = 15
-    E1 = 16
-    D2 = 17
-    E2 = 18
-    D3 = 19
-    E3 = 20
-    I1 = 21
-    H1 = 22
-    I2 = 23
-    H2 = 24
+    C1 = 5
+    C2 = 6
+    C3 = 7
+    D1 = 8
+    D2 = 9
+    D3 = 10
+    E1 = 11
+    E2 = 12
+    E3 = 13
+    F1 = 14
+    F2 = 15
+    F3 = 16
+    G1 = 17
+    G2 = 18
+    G3 = 19
+    H1 = 20
+    H2 = 21
+    H3 = 22
+    I1 = 23
+    I2 = 24
     I3 = 25
-    H3 = 26
-    F1 = 27
-    G1 = 28
-    F2 = 29
-    G2 = 30
-    F3 = 31
-    G3 = 32
-    D1 = 33
+    L1 = 26
+    L2 = 27
+    L3 = 28
+    M1 = 29
+    M2 = 30
+    M3 = 31
+    N1 = 32
+    N2 = 33
 
 
 class MotionState(enum.IntEnum):
     """Motion state."""
 
-    FAULT = 0
+    ERROR = 0
     CLOSED = 1
     CRAWLING = 2
     MOVING = 3
