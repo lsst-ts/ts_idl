@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["EnabledState", "Louver", "MotionState"]
+__all__ = ["EnabledState", "Louver", "MotionState", "OperationalMode", "SubSystemId"]
 
 import enum
 
@@ -84,3 +84,27 @@ class MotionState(enum.IntEnum):
     STOPPING = 8
     STOPPING_BRAKING = 9
     STOPPED_BRAKED = 10
+
+
+class OperationalMode(enum.IntEnum):
+    """Operational Modes."""
+
+    NORMAL = 1
+    DEGRADED = 2
+
+
+class SubSystemId(enum.IntEnum):
+    """SubSystem ID bitmask."""
+
+    # Azimuth Motion Control System
+    AMCS = 0x1
+    # Light and Wind Screen Control System
+    LWSCS = 0x2
+    # APerture Shutter Control System
+    APSCS = 0x4
+    # Louvers Control System
+    LCS = 0x8
+    # THermal Control System
+    THCS = 0x10
+    # MONitoring Control System
+    MONCS = 0x20
