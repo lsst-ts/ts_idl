@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["ExposureState"]
+__all__ = ["ExposureState", "SalIndex"]
 
 import enum
 
@@ -33,3 +33,11 @@ class ExposureState(enum.IntEnum):
     CANCELLED = 3
     TIMEDOUT = 4
     FAILED = 5
+
+
+class SalIndex(enum.IntEnum):
+    """Allowed SAL indices."""
+
+    BLUE = 1
+    RED = 2
+    BROAD = 3

@@ -18,18 +18,9 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["GuiderStatus", "SalIndex"]
+__all__ = ["SalIndex"]
 
 import enum
-
-
-class GuiderStatus(enum.IntEnum):
-    """Guider status."""
-
-    STOPPED = 1
-    STARTING = enum.auto()
-    GUIDING = enum.auto()
-    ERROR = enum.auto()
 
 
 class SalIndex(enum.IntEnum):
