@@ -6,10 +6,17 @@
 Version History
 ===============
 
+v3.5.0
+------
+
+* Added SalIndex enum to FiberSpectrograph, Guider, OCPS, Scheduler and ScriptQueue enums modules.
+  Tweak doc string for SalIndex in MTHexapod enums module.
+* Modernize unit tests to use bare asserts.
+
 v3.4.0
 ------
 
-* Add ErrorCode enums to MTHexapod and MTRotator
+* Add ErrorCode enums to MTHexapod and MTRotator.
 * Update MTDome enum values.
 * Use pytest-black instead of a dedicated unit test.
 * Modernize setup.cfg.

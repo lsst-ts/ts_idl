@@ -19,6 +19,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import pathlib
 import unittest
 
 from lsst.ts import idl
@@ -26,12 +27,12 @@ from lsst.ts import idl
 
 class UtilsTestCase(unittest.TestCase):
     def test_get_pkg_root(self):
-        pkg_root = idl.get_pkg_root()
-        self.assertEqual(pkg_root.name, "ts_idl")
+        expected_pkg_root = pathlib.Path(__file__).parents[1]
+        assert idl.get_pkg_root() == expected_pkg_root
 
     def test_get_idl_dir(self):
-        pkg_root = idl.get_idl_dir()
-        self.assertEqual(pkg_root.name, "idl")
+        expected_idl_dir = pathlib.Path(__file__).parents[1] / "idl"
+        assert idl.get_idl_dir() == expected_idl_dir
 
     def test_enums_modules(self):
         enum_module_names = set(
@@ -70,8 +71,4 @@ class UtilsTestCase(unittest.TestCase):
                 "Watcher",
             )
         )
-        self.assertTrue(expected_names_subset <= enum_module_names)
-
-
-if __name__ == "__main__":
-    unittest.main()
+        assert expected_names_subset <= enum_module_names

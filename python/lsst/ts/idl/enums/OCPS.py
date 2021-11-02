@@ -24,6 +24,8 @@ import enum
 
 
 class SalIndex(enum.IntEnum):
+    """Allowed SAL indices."""
+
     LATISS = 1
     LSSTComCam = 2
     LSSTCam = 3

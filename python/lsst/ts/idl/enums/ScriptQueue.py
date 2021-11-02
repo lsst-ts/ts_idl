@@ -19,7 +19,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-__all__ = ["Location", "ScriptProcessState"]
+__all__ = ["Location", "SalIndex", "ScriptProcessState"]
 
 import enum
 
@@ -31,6 +31,17 @@ class Location(enum.IntEnum):
     LAST = 2
     BEFORE = 3
     AFTER = 4
+
+
+class SalIndex(enum.IntEnum):
+    """Allowed SAL indices for the bin scripts.
+
+    The CSC allows other positive values, as well,
+    but those should only be used for unit testing.
+    """
+
+    MAIN_TEL = 1
+    AUX_TEL = 2
 
 
 class ScriptProcessState(enum.IntEnum):
