@@ -40,6 +40,7 @@ from . import MTMount
 from . import MTPtg
 from . import MTRotator
 from . import PMD
+from . import Scheduler
 from . import Script
 from . import ScriptQueue
 from . import TunableLaser

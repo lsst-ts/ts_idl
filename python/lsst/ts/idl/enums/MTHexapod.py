@@ -70,6 +70,8 @@ class ApplicationStatus(enum.IntFlag):
 
 
 class SalIndex(enum.IntEnum):
+    """Allowed SAL indices."""
+
     CAMERA_HEXAPOD = 1
     M2_HEXAPOD = 2
 
