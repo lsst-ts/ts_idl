@@ -12,6 +12,7 @@ v3.5.0
 * Added SalIndex enum to FiberSpectrograph, Guider, OCPS, Scheduler and ScriptQueue enums modules.
   Tweak doc string for SalIndex in MTHexapod enums module.
 * Modernize unit tests to use bare asserts.
+* Added ESS ErroCode enum.
 
 v3.4.0
 ------
