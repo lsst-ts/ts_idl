@@ -18,7 +18,15 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["Grating", "Slit", "LightStatus", "Device"]
+__all__ = [
+    "Grating",
+    "Slit",
+    "LightStatus",
+    "Device",
+    "DetailedState",
+    "Status",
+    "ErrorCode",
+]
 
 import enum
 
@@ -61,3 +69,18 @@ class Status(enum.IntEnum):
     READY = 2
     OFFLINE = 3
     FAULT = 4
+
+
+class ErrorCode(enum.IntEnum):
+    """ATMonochromator error codes.
+
+    • CONNECTION_FAILED: could not connect to low-level controller
+    • HARDWARE_NOT_READY: low-level controller reported "not ready"
+    • HARDWARE_ERROR: low-level controller reported "fault"
+    • MISC: other error, probably a communication failure
+    """
+
+    CONNECTION_FAILED = 1
+    HARDWARE_NOT_READY = 2
+    HARDWARE_ERROR = 3
+    MISC = 10

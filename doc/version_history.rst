@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v3.6.0
+------
+
+* Add ErrorCode enum to ATMonochromator
+
 v3.5.0
 ------
 
