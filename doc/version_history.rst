@@ -9,7 +9,8 @@ Version History
 v3.6.0
 ------
 
-* Add ErrorCode enum to ATMonochromator
+* Add ErrorCode enum to ATMonochromator.
+* Add ErrorCode.NO_CONFIG to MTHexapod and MTRotator.
 
 v3.5.0
 ------
