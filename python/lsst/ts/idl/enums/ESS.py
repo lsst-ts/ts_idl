@@ -25,12 +25,18 @@ from enum import IntEnum
 
 
 class ErrorCode(IntEnum):
-    """Error codes that can be used by the ESS CSC."""
+    """Error codes that can be used by the ESS CSC.
 
-    NotConnected = 1
-    AlreadyConnected = 2
-    NotConfigured = 3
-    BadConfiguration = 4
-    ReadLoopFailed = 5
-    TelemetryError = 6
-    HardwareError = 7
+    Values:
+
+    * ConnectionFailed: a model could not connect its data server.
+      Perhaps the model configuration is wrong or the server is down.
+    * ConnectionLost: a model lost its connection to its data server.
+    * StartFailed: one or more models failed to start.
+    * RunFailed: one or more models failed while running.
+    """
+
+    ConnectionFailed = 1
+    ConnectionLost = 2
+    StartFailed = 3
+    RunFailed = 4
