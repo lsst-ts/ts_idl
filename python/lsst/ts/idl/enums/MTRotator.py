@@ -105,7 +105,10 @@ class ErrorCode(enum.IntEnum):
       following closely enough, or if a user issues the ``fault`` command.
     * CONNECTION_LOST: The CSC lost communication with the low-level
       controller.
+    * NO_CONFIG: The CSC did not receive configuration from the low-level
+      controller shortly after connecting to it.
     """
 
     CONTROLLER_FAULT = 1
     CONNECTION_LOST = 2
+    NO_CONFIG = 3
