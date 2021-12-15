@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v3.7.0
+------
+
+* ESS: overhaul ErrorCode enum values.
+
 v3.6.0
 ------
 
