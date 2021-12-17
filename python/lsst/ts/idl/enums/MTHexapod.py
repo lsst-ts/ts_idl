@@ -41,7 +41,7 @@ from .MTRotator import (
 class ApplicationStatus(enum.IntFlag):
     """Bit masks for the value reported in ``telemetry.application_status``.
 
-    These are from https://github.com/lsst-ts/ts_hexapod_controller/blob/master/include/actuatorTlm.h  # noqa
+    These are from https://github.com/lsst-ts/ts_hexapod_controller/blob/main/include/actuatorTlm.h  # noqa
     """
 
     FOLLOWING_ERROR = 0x1
