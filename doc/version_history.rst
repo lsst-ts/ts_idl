@@ -9,7 +9,8 @@ Version History
 v3.7.0
 ------
 
-* ESS: overhaul ErrorCode enum values.
+* ESS: Overhaul ErrorCode enum values.
+* MTDome: Add new MotionStates.
 
 v3.6.0
 ------
