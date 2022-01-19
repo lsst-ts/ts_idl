@@ -73,17 +73,42 @@ class Louver(enum.IntEnum):
 class MotionState(enum.IntEnum):
     """Motion state."""
 
-    ERROR = 0
-    CLOSED = 1
-    CRAWLING = 2
-    MOVING = 3
-    OPEN = 4
-    PARKED = 5
-    PARKING = 6
-    STOPPED = 7
-    STOPPING = 8
-    STOPPING_BRAKING = 9
-    STOPPED_BRAKED = 10
+    ERROR = enum.auto()
+    CLOSED = enum.auto()
+    CRAWLING = enum.auto()
+    MOVING = enum.auto()
+    OPEN = enum.auto()
+    PARKED = enum.auto()
+    PARKING = enum.auto()
+    STOPPED = enum.auto()
+    STOPPING = enum.auto()
+    STOPPING_BRAKING = enum.auto()
+    STOPPED_BRAKED = enum.auto()
+    # Technically speaking these next states are regarded intermediary states
+    # but they are added here to avoid too much hassle dealing with two enums
+    BRAKES_DISENGAGED = enum.auto()
+    BRAKES_ENGAGED = enum.auto()
+    DEFLATED = enum.auto()
+    DEFLATING = enum.auto()
+    DISABLING_MOTOR_POWER = enum.auto()
+    DISENGAGING_BRAKES = enum.auto()
+    ENABLING_MOTOR_POWER = enum.auto()
+    ENGAGING_BRAKES = enum.auto()
+    GO_DEGRADED = enum.auto()
+    GO_NORMAL = enum.auto()
+    GO_STATIONARY = enum.auto()
+    INFLATED = enum.auto()
+    INFLATING = enum.auto()
+    LP_DISENGAGED = enum.auto()
+    LP_DISENGAGING = enum.auto()
+    LP_ENGAGED = enum.auto()
+    LP_ENGAGING = enum.auto()
+    MOTOR_COOLING_OFF = enum.auto()
+    MOTOR_COOLING_ON = enum.auto()
+    MOTOR_POWER_OFF = enum.auto()
+    MOTOR_POWER_ON = enum.auto()
+    STARTING_MOTOR_COOLING = enum.auto()
+    STOPPING_MOTOR_COOLING = enum.auto()
 
 
 class OperationalMode(enum.IntEnum):
