@@ -27,6 +27,7 @@ from . import ATPneumatics
 from . import ATPtg
 from . import ATSpectrograph
 from . import ATThermoelectricCooler
+from . import ATWhiteLight
 from . import Electrometer
 from . import FiberSpectrograph
 from . import Guider
