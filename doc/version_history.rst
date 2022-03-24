@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v3.8.0
+------
+
+* Add ATWhiteLight enum module.
+
 v3.7.0
 ------
 
