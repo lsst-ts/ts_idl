@@ -65,10 +65,10 @@ class DetailedState(enum.IntEnum):
 
 
 class Status(enum.IntEnum):
-    SETTING_UP = 1
-    READY = 2
-    OFFLINE = 3
-    FAULT = 4
+    SETTING_UP = 0
+    READY = 1
+    OFFLINE = 2
+    FAULT = 3
 
 
 class ErrorCode(enum.IntEnum):
