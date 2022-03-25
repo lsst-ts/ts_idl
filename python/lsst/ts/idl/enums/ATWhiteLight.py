@@ -213,6 +213,9 @@ class LampControllerError(enum.IntEnum):
 
     Values 1-8 match the number of flashes of the error LED.
     Until the flashes have been counted the error will be GENERIC_ERROR.
+
+    A value of UNKNOWN indicates that the CSC has not finished counting
+    the number of flashes, or the number was not a recognized value.
     """
 
     NONE = -1
@@ -225,25 +228,32 @@ class LampControllerError(enum.IntEnum):
     AIRFLOW_INADEQUATE = 6
     LAMP_STUCK_ON = 7
     AIRFLOW_MALFUNCTION = 8
-    GENERIC_ERROR = 9  # We haven't decoded the error signal yet
 
 
 class LampControllerState(enum.IntEnum):
     """Lamp controller state.
 
-    Note that COOLDOWN refers to a cooldown timer internal to the
-    lamp controller. This is completely different than the CSC's
-    cooldown timer, whose duration is set by config.lamp.cooldown_period.
+    Values:
 
-    The controller's internal timer is typically much shorter than
-    the CSC's timer. It appears the lamp controller manufacturer chose
-    not to follow their own guidelines for prolonging the life of a bulb.
+    * OFF: The lamp controller appears to be powered off (though it might
+      also be disconnected from the LabJack).
+      None of the status signals is high.
+    * STANDBY_OR_ON: Either the lamp is on, or it has been off long enough
+      that the lamp controller's short COOLDOWN phase is over.
+      The main LED is green.
+    * COOLDOWN: The lamp was recently turned off and the lamp controller
+      is cooling down. This is different than the CSC's cooldown phase,
+      whose duration is set by config.lamp.cooldown_period. The lamp
+      controller's cooldown phase is not configurable, but it is typically
+      much shorter than the CSC's cooldown phase.
+      The main LED is blue.
+    * ERROR: The lamp controller is reporting an error.
+      The main LED is red.
     """
 
     UNKNOWN = 0
     OFF = enum.auto()
-    STANDBY = enum.auto()
-    OPERATING = enum.auto()
+    STANDBY_OR_ON = enum.auto()
     COOLDOWN = enum.auto()
     ERROR = enum.auto()
 
