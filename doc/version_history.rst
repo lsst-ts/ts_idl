@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v3.8.1
+------
+
+* Fix two ATWhiteLight enums.
+
 v3.8.0
 ------
 
