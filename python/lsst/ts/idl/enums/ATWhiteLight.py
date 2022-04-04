@@ -199,7 +199,6 @@ class LampBasicState(enum.IntEnum):
       but not fully warmed up.
       You cannot turn the lamp off unless you specify force=True,
       which will shorten bulb life.
-    * ERROR: the lamp controller is reporting an error.
     """
 
     UNKNOWN = 0
@@ -207,7 +206,6 @@ class LampBasicState(enum.IntEnum):
     ON = enum.auto()
     COOLDOWN = enum.auto()
     WARMUP = enum.auto()
-    ERROR = enum.auto()
 
 
 class LampControllerError(enum.IntEnum):

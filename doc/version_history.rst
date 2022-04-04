@@ -6,11 +6,6 @@
 Version History
 ===============
 
-v3.8.2
-------
-
-* Add a ATWhiteLight enum value.
-
 v3.8.1
 ------
 
