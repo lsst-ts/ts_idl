@@ -81,18 +81,30 @@ class LimitsMask(enum.IntFlag):
     * L1 = software limit
     * L2 = direction inhibit
     * L3 = cut power
+
+    The ADJUSTABLE_L1 limits apply to the elevation and azimuth axes.
+    The OPERATIONAL_L2 limits only apply to the elevation axis.
+    These limits may be enabled or disabled, and that is reported in the
+    azimuthControllerSettings and elevationControllerSettings events.
+
+    The CAMERA_CABLE_WRAP_FOLLOW_L3 limits protect the cables in the camera
+    cable wrap; they detect excessive difference between camera rotator and
+    camera cable wrap position. TODO DM-34358: document the sign of these
+    limits (is "MIN" when CCW is too negative or too positive?).
     """
 
-    L1_MIN = 0x01
-    L1_MAX = 0x02
-    L2_MIN = 0x03
-    L2_MAX = 0x04
-    L3_MIN = 0x05
-    L3_MAX = 0x06
-    ADJUSTABLE_L1_MIN = 0x07
-    ADJUSTABLE_L1_MAX = 0x08
-    OPERATIONAL_L1_MIN = 0x09
-    OPERATIONAL_L1_MAX = 0x10
+    L1_MIN = 0x1
+    L1_MAX = 0x2
+    L2_MIN = 0x4
+    L2_MAX = 0x8
+    L3_MIN = 0x10
+    L3_MAX = 0x20
+    ADJUSTABLE_L1_MIN = 0x40
+    ADJUSTABLE_L1_MAX = 0x80
+    OPERATIONAL_L2_MIN = 0x100
+    OPERATIONAL_L2_MAX = 0x200
+    CAMERA_CABLE_WRAP_FOLLOW_L3_MIN = 0x400
+    CAMERA_CABLE_WRAP_FOLLOW_L3_MAX = 0x800
 
 
 class PowerState(enum.IntEnum):
