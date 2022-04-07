@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v3.8.2
+------
+
+* Fix MTMount LimitsMask enum.
+
 v3.8.1
 ------
 

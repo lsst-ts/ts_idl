@@ -212,7 +212,7 @@ class LampControllerError(enum.IntEnum):
     """Errors reported by the lamp controller.
 
     Values 1-8 match the number of flashes of the error LED.
-    Until the flashes have been counted the error will be GENERIC_ERROR.
+    Until the flashes have been counted the error will be UNKNOWN.
 
     A value of UNKNOWN indicates that the CSC has not finished counting
     the number of flashes, or the number was not a recognized value.
@@ -248,7 +248,7 @@ class LampControllerState(enum.IntEnum):
       much shorter than the CSC's cooldown phase.
       The main LED is blue.
     * ERROR: The lamp controller is reporting an error.
-      The main LED is red.
+      The main LED is red and the error LED should be flashing.
     """
 
     UNKNOWN = 0
