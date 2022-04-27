@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v3.8.3
+------
+
+* MTMount LimitsMask: document the sign of ``CAMERA_CABLE_WRAP_FOLLOW_L3_MIN``.
+
 v3.8.2
 ------
 
