@@ -6,6 +6,13 @@
 Version History
 ===============
 
+v4.0.0
+------
+
+* Move the 'idl' directory into a new 'data' directory and adjust source and test code to that.
+* Convert to 'noarch: python' according to the conda build specifications.
+* Migrate from setup.py + setup.cfg to pyproject.toml + a much smaller setup.py.
+
 v3.8.3
 ------
 
