@@ -1,6 +1,6 @@
 # This file is part of ts_idl.
 #
-# Developed for the LSST Telescope and Site Systems.
+# Developed for Vera Rubin Observatory.
 # This product includes software developed by the LSST Project
 # (https://www.lsst.org).
 # See the COPYRIGHT file at the top-level directory of this distribution
@@ -26,12 +26,21 @@ from lsst.ts import idl
 
 
 class UtilsTestCase(unittest.TestCase):
-    def test_get_pkg_root(self):
-        expected_pkg_root = pathlib.Path(__file__).parents[1]
-        assert idl.get_pkg_root() == expected_pkg_root
+    def get_expected_data_dir(self) -> pathlib.Path:
+        return (
+            pathlib.Path(__file__).parent.parent
+            / "python"
+            / "lsst"
+            / "ts"
+            / "idl"
+            / "data"
+        )
+
+    def test_get_data_dir(self):
+        assert idl.get_data_dir() == self.get_expected_data_dir()
 
     def test_get_idl_dir(self):
-        expected_idl_dir = pathlib.Path(__file__).parents[1] / "idl"
+        expected_idl_dir = self.get_expected_data_dir() / "idl"
         assert idl.get_idl_dir() == expected_idl_dir
 
     def test_enums_modules(self):
