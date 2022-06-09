@@ -13,6 +13,8 @@ v4.0.0
 * Convert to 'noarch: python' according to the conda build specifications.
 * Migrate from setup.py + setup.cfg to pyproject.toml + a much smaller setup.py.
 * Set the XML and SAL versions in the build hash.
+* Update the versions in .pre-commit-config.yaml.
+* `enums.MTMount.System`: rename one entry.
 
 v3.8.3
 ------
