@@ -1,14 +1,15 @@
 {% set data= load_setup_py_data() %}
 package:
   name: ts-idl
-  version: {{ data.get('version') }}_{{ TS_XML_VERSION }}_{{ TS_SAL_VERSION }}
+  version: {{ data.get('version') }}
 
 source:
   path: ../
 
 build:
-  noarch: generic
+  noarch: python
   skip: False #[win]
+  string: {{ TS_XML_VERSION }}_{{ TS_SAL_VERSION }}
   script_env:
     - PATH
     - PYTHONPATH

@@ -89,8 +89,8 @@ class LimitsMask(enum.IntFlag):
 
     The CAMERA_CABLE_WRAP_FOLLOW_L3 limits protect the cables in the camera
     cable wrap; they detect excessive difference between camera rotator and
-    camera cable wrap position. TODO DM-34358: document the sign of these
-    limits (is "MIN" when CCW is too negative or too positive?).
+    camera cable wrap position. CAMERA_CABLE_WRAP_FOLLOW_L3_MIN means
+    the camera cable wrap is too negative compared to the rotator.
     """
 
     L1_MIN = 0x1
@@ -139,6 +139,6 @@ class System(enum.IntEnum):
     ELEVATION_DRIVES_THERMAL = 11
     AZ0101_CABINET_THERMAL = 12
     MODBUS_TEMPERATURE_CONTROLLERS = 13
-    MAIN_CABINET = 14
+    MAIN_CABINET_THERMAL = 14
     MAIN_AXES_POWER_SUPPLY = 15
     TOP_END_CHILLER = 16
