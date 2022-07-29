@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v4.0.1
+------
+
+* `enums.ATWhiteLight`: fix some alarm enum values and add a note about provenance and order.
+
 v4.0.0
 ------
 
