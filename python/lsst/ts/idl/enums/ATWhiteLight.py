@@ -44,12 +44,27 @@ class ChillerControllerState(enum.IntEnum):
 
 
 class ChillerL1Alarms(enum.IntFlag):
-    """Level 1 chiller alarms."""
+    """Level 1 chiller alarms.
 
-    AMBIENT_TEMP_SENSOR = 0x01
-    HIGH_CONTROL_TEMP = 0x02
-    PT7_HIGH_TEMP = 0x04
-    LOW_CONTROL_TEMP = 0x08
+    Notes
+    -----
+    These codes are from ThermoTek manual "TTK Serial Communication Protocol
+    Release II", specifically from a table in the ALARMS & WARNINGS section.
+
+    Unfortunately, the table is published in order left-most alarm char first.
+    In order to make it easier to transcribe the table, the CSC code
+    reverses the alarm code string before parsing it as a hex integer.
+    In other words if the chiller reports alarm state "123ABC"
+    the CSC reports this as 0xCBA321.
+    This was a difficult decision, but it proved very awkward to transcribe
+    the table entries in the order needed to avoid reversing the alarm
+    state string.
+    """
+
+    AMBIENT_TEMP_SENSOR = 0x1
+    HIGH_CONTROL_TEMP = 0x2
+    PT7_HIGH_TEMP = 0x4
+    LOW_CONTROL_TEMP = 0x8
 
     SUPPLY_TEMP_SENSOR = 0x10
     EXTERNAL_RTD_SENSOR = 0x20
@@ -78,7 +93,10 @@ class ChillerL1Alarms(enum.IntFlag):
 
 
 class ChillerL21Alarms(enum.IntFlag):
-    """Level 2-1 chiller alarms."""
+    """Level 2-1 chiller alarms.
+
+    See the note in ChillerL1Alarms about provenance and order.
+    """
 
     # not used: 0x01
     # not used: 0x02
@@ -102,7 +120,7 @@ class ChillerL21Alarms(enum.IntFlag):
 
     IO_EXPENDER_ACKNOWLEDGE_ERROR = 0x1_0000
     PSA_EXPENDER_ACKNOWLEDGE_ERROR = 0x2_0000
-    RTC_ACKNOWLEDGE_ERROR = 4_0000
+    RTC_ACKNOWLEDGE_ERROR = 0x4_0000
     # not used: 0x8_0000
 
     I2C_SCL_LOW_ERROR = 0x10_0000
@@ -110,14 +128,22 @@ class ChillerL21Alarms(enum.IntFlag):
     EEPROM_1_ACKNOWLEDGE = 0x40_0000
     EEPROM_2_ACKNOWLEDGE = 0x80_0000
 
-    EEPROM_1_READ_ERROR = 0x100_0000
-    EEPROM_1_WRITE_ERROR = 0x200_0000
-    EEPROM_2_READ_ERROR = 0x400_0000
-    EEPROM_2_WRITE_ERROR = 0x800_0000
+    # not used: 0x100_0000
+    # not used: 0x200_0000
+    # not used: 0x400_0000
+    # not used: 0x800_0000
+
+    EEPROM_1_READ_ERROR = 0x1000_0000
+    EEPROM_1_WRITE_ERROR = 0x2000_0000
+    EEPROM_2_READ_ERROR = 0x4000_0000
+    EEPROM_2_WRITE_ERROR = 0x8000_0000
 
 
 class ChillerL22Alarms(enum.IntFlag):
-    """Level 2-2 chiller alarms."""
+    """Level 2-2 chiller alarms.
+
+    See the note in ChillerL1Alarms about provenance and order.
+    """
 
     EXTERNAL_RTD_SENSOR_OPEN = 0x1
     EXTERNAL_RTD_SENSOR_SHORT = 0x2
@@ -161,12 +187,15 @@ class ChillerL22Alarms(enum.IntFlag):
 
 
 class ChillerWarnings(enum.IntFlag):
-    """Chiller warnings."""
+    """Chiller warnings.
 
-    LOW_COOLANT_FLOW = 0x01
-    COOLANT_FLUID_LEVEL = 0x02
-    SWITCH_TO_SUPPLY_TEMP_AS_CONTROL_TEMP = 0x04
-    # not used: 0x08
+    See the note in ChillerL1Alarms about provenance and order.
+    """
+
+    LOW_COOLANT_FLOW = 0x1
+    COOLANT_FLUID_LEVEL = 0x2
+    SWITCH_TO_SUPPLY_TEMP_AS_CONTROL_TEMP = 0x4
+    # not used: 0x8
 
     HIGH_CONTROL_TEMP = 0x10
     LOW_CONTROL_TEMP = 0x20
