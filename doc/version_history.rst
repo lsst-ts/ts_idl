@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v4.1.0
+------
+
+* Add new ``DetailedState`` enumeration for the Scheduler.
+
 v4.0.1
 ------
 
