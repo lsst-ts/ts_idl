@@ -56,3 +56,12 @@ class HardpointActuatorMotionStates(enum.IntEnum):
     STEPPING = 2
     QUICKPOSITIONING = 3
     FINEPOSITIONING = 4
+
+class HardpointTest(enum.IntEnum):
+    NOTTESTED = 1
+    MOVINGNEGATIVE = 2
+    TESTINGPOSITIVE = 3
+    TESTINGNEGATIVE = 4
+    MOVINGREFERENCE = 5
+    PASSED = 6
+    FAILED = 7
