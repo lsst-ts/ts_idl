@@ -71,13 +71,21 @@ class Louver(enum.IntEnum):
 
 
 class MotionState(enum.IntEnum):
-    """Motion state."""
+    """Motion state.
+
+    The values are reported by the control software as strings. The control
+    software may emit values not present in this enum, which get translated
+    into values in this enum by the CSC. One example is STATIONARY which gets
+    translated into STOPPED_BRAKED.
+    """
 
     ERROR = enum.auto()
     CLOSED = enum.auto()
+    CLOSING = enum.auto()
     CRAWLING = enum.auto()
     MOVING = enum.auto()
     OPEN = enum.auto()
+    OPENING = enum.auto()
     PARKED = enum.auto()
     PARKING = enum.auto()
     STOPPED = enum.auto()
@@ -94,6 +102,10 @@ class MotionState(enum.IntEnum):
     DISENGAGING_BRAKES = enum.auto()
     ENABLING_MOTOR_POWER = enum.auto()
     ENGAGING_BRAKES = enum.auto()
+    FINAL_DOWN_CLOSE_LS_ENGAGED = enum.auto()
+    FINAL_DOWN_OPEN_LS_ENGAGED = enum.auto()
+    FINAL_UP_CLOSE_LS_ENGAGED = enum.auto()
+    FINAL_UP_OPEN_LS_ENGAGED = enum.auto()
     GO_DEGRADED = enum.auto()
     GO_NORMAL = enum.auto()
     GO_STATIONARY = enum.auto()
@@ -107,8 +119,11 @@ class MotionState(enum.IntEnum):
     MOTOR_COOLING_ON = enum.auto()
     MOTOR_POWER_OFF = enum.auto()
     MOTOR_POWER_ON = enum.auto()
+    PROXIMITY_CLOSED_LS_ENGAGED = enum.auto()
+    PROXIMITY_OPEN_LS_ENGAGED = enum.auto()
     STARTING_MOTOR_COOLING = enum.auto()
     STOPPING_MOTOR_COOLING = enum.auto()
+    UNDETERMINED = enum.auto()
 
 
 class OperationalMode(enum.IntEnum):
