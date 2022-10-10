@@ -28,29 +28,17 @@ class ScriptState(enum.IntEnum):
     """ScriptState constants."""
 
     UNKNOWN = 0
-    """Script state is unknown."""
     UNCONFIGURED = 1
-    """Script is not configured and so cannot be run."""
     CONFIGURED = 2
-    """Script is configured and so can be run."""
     RUNNING = 3
-    """Script is running."""
     PAUSED = 4
-    """Script has paused, by request."""
     ENDING = 5
-    """Script is cleaning up after running successfully
-    (though it can still fail if there is an error in cleanup)."""
     STOPPING = 6
-    """Script is cleaning up after being asked to stop
-    (though it can still fail if there is an error in cleanup)."""
     FAILING = 7
-    """Script is cleaning up after an error."""
     DONE = 8
-    """Script exiting after successfully running."""
     STOPPED = 9
-    """Script exiting after being asked to stop."""
     FAILED = 10
-    """Script exiting after an error."""
+    CONFIGURE_FAILED = 11
 
 
 class MetadataCoordSys(enum.IntEnum):
