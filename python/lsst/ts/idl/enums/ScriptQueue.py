@@ -53,5 +53,6 @@ class ScriptProcessState(enum.IntEnum):
     RUNNING = 3
     DONE = 4
     LOADFAILED = 5
-    CONFIGUREFAILED = 6
+    CONFIGURE_FAILED = 6
     TERMINATED = 7
+    CONFIGUREFAILED = 6  # deprecated alias for CONFIGURE_FAILED

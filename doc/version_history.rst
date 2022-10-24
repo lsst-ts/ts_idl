@@ -6,6 +6,14 @@
 Version History
 ===============
 
+v4.1.0
+------
+
+* Add new ``DetailedState`` enumeration for the Scheduler.
+* Add new ``Script.ScriptState.CONFIGURE_FAILED`` enum item, to match ts_xml 12.1.
+* Add new ``ScriptQueue.ScriptProcessState.CONFIGURE_FAILED`` enum item and retained ``CONFIGUREFAILED`` as a deprecated alias.
+* Update ``ATMCS.M3ExitPort``.
+
 v4.0.1
 ------
 
