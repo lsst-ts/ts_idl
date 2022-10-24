@@ -32,9 +32,9 @@ class AtMountState(enum.IntEnum):
 
 
 class M3ExitPort(enum.IntEnum):
-    NASMYTH1 = 6
-    NASMYTH2 = 7
-    PORT3 = 8
+    NASMYTH1 = 1
+    NASMYTH2 = 2
+    PORT3 = 3
 
 
 class M3State(enum.IntEnum):
