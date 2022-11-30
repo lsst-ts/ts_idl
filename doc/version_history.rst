@@ -6,6 +6,10 @@
 Version History
 ===============
 
+v4.2.0
+------
+* Add PROPAGATINGBURSTMODEWAITINGFORTRIGGER and PROPAGATINGBURSTMODETRIGGERED to LaserDetailedState
+
 v4.1.0
 ------
 
