@@ -8,6 +8,8 @@ Version History
 
 v4.2.0
 ------
+
+* Add `enums.LaserTracker`.
 * Add PROPAGATINGBURSTMODEWAITINGFORTRIGGER and PROPAGATINGBURSTMODETRIGGERED to LaserDetailedState
 
 v4.1.0
