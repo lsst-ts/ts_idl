@@ -6,6 +6,13 @@
 Version History
 ===============
 
+v4.2.0
+------
+
+* Add ``enums.LaserTracker``.
+* `enums.TunableLaser.LaserDetailedState`: add PROPAGATINGBURSTMODEWAITINGFORTRIGGER and PROPAGATINGBURSTMODETRIGGERED.
+* `enums.ATMonochromator.Grating`: fix enum values.
+
 v4.1.0
 ------
 

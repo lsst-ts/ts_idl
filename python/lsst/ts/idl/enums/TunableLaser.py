@@ -15,11 +15,17 @@ class LaserDetailedState(enum.IntEnum):
         Corresponds to the nonpropgating state.
     PROPAGATINGSTATE : `int`
         Corresponds to the propagating state.
+    PROPAGATING_BURST_MODE_WAITING_FOR_TRIGGER : `int`
+        Waiting for trigger in burst mode.
+    PROPAGATING_BURST_MODE_TRIGGERED : `int`
+        Triggered a burst.
 
     """
 
     NONPROPAGATING = 1
     PROPAGATING = 2
+    PROPAGATING_BURST_MODE_WAITING_FOR_TRIGGER = 3
+    PROPAGATING_BURST_MODE_TRIGGERED = 4
 
 
 class LaserErrorCode(enum.IntEnum):
