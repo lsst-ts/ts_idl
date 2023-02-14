@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v4.2.1
+------
+
+* `enums.MTDome.MotionState`: add DISABLED value.
+
 v4.2.0
 ------
 
