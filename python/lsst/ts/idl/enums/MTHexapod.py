@@ -29,14 +29,9 @@ __all__ = [
 
 import enum
 
-
 # MTHexapod and MTRotator have the same enum values for
 # ControllerState, OfflineSubstate, and EnabledSubstate.
-from .MTRotator import (
-    ControllerState,
-    EnabledSubstate,
-    OfflineSubstate,
-)
+from .MTRotator import ControllerState, EnabledSubstate, OfflineSubstate
 
 
 class ApplicationStatus(enum.IntFlag):
