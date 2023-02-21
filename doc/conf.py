@@ -1,7 +1,7 @@
 """Sphinx configuration file for TSSW package"""
 
-from documenteer.conf.pipelinespkg import *  # noqa
 import lsst.ts.idl  # noqa
+from documenteer.conf.pipelinespkg import *  # noqa
 
 project = "ts_idl"
 html_theme_options["logotext"] = project  # type: ignore # noqa
