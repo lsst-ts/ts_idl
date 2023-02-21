@@ -1,55 +1,96 @@
 #!/usr/bin/env groovy
-
+properties([
+    buildDiscarder(
+        logRotator(
+            artifactDaysToKeepStr: '',
+            artifactNumToKeepStr: '',
+            daysToKeepStr: '14',
+            numToKeepStr: '10',
+        )
+    ),
+    // Make new builds terminate existing builds
+    disableConcurrentBuilds(
+        abortPrevious: true,
+    )
+])
 pipeline {
-
     agent {
-        // Use the docker to assign the Python version.
-        // Use the label to assign the node to run the test.
-        // It is recommended by SQUARE to not add the label
+        // To run on a specific node, e.g. for a specific architecture, add `label '...'`.
         docker {
             alwaysPull true
             image 'lsstts/develop-env:develop'
-            args "-u root --entrypoint=''"
+            args "--entrypoint=''"
         }
     }
 
     environment {
-        // XML report path
-        XML_REPORT="jenkinsReport/report.xml"
-        // Module name used in the pytest coverage analysis
-        user_ci = credentials('lsst-io')
-        LTD_USERNAME="${user_ci_USR}"
-        LTD_PASSWORD="${user_ci_PSW}"
+        // Python module name.
+        MODULE_NAME = 'lsst.ts.idl'
+        // Product name for documentation upload; the associated
+        // documentation site is `https://{DOC_PRODUCT_NAME}.lsst.io`.
+        DOC_PRODUCT_NAME = 'ts-idl'
+
+        LSST_IO_CREDS = credentials('lsst-io')
+        XML_REPORT_PATH="jenkinsReport/report.xml"
     }
 
     stages {
-        stage('Build and Upload Documentation') {
+        stage('Run unit tests') {
             steps {
-                withEnv(["HOME=${env.WORKSPACE}"]) {
+                withEnv(["WHOME=${env.WORKSPACE}"]) {
                     sh """
-                        source /home/saluser/.setup_dev.sh || echo loading env failed. Continuing...
-                        pip install .
-                        pip install -r doc/requirements.txt
-                        setup -kr .
-                        package-docs build
-                        ltd upload --product ts-idl --git-ref ${GIT_BRANCH} --dir doc/_build/html
+                        source /home/saluser/.setup_dev.sh || echo "Loading env failed; continuing..."
+                        setup -r .
+                        pytest --cov-report html --cov=${env.MODULE_NAME} --junitxml=${env.XML_REPORT_PATH}
                     """
                 }
             }
         }
-    }
-
-    post {
-        always {
-            // Change the ownership of workspace to Jenkins for the clean up
-            // This is a "work around" method
-            withEnv(["HOME=${env.WORKSPACE}"]) {
-                sh 'chown -R 1003:1003 ${HOME}/'
+        stage('Build documentation') {
+            steps {
+                withEnv(["WHOME=${env.WORKSPACE}"]) {
+                    sh """
+                        source /home/saluser/.setup_dev.sh || echo "Loading env failed; continuing..."
+                        setup -r .
+                        package-docs build
+                    """
+                }
             }
         }
+        stage('Try to upload documentation') {
+            steps {
+                withEnv(["WHOME=${env.WORKSPACE}"]) {
+                    catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
+                        sh '''
+                            source /home/saluser/.setup_dev.sh || echo "Loading env failed; continuing..."
+                            setup -r .
+                            ltd -u ${LSST_IO_CREDS_USR} -p ${LSST_IO_CREDS_PSW} upload \
+                                --product ${DOC_PRODUCT_NAME} --git-ref ${GIT_BRANCH} --dir doc/_build/html
+                        '''
+                    }
+                }
+            }
+        }
+     }
+    post {
+        always {
+            // The path of xml needed by JUnit is relative to the workspace.
+            junit 'jenkinsReport/*.xml'
 
+            // Publish the HTML report.
+            publishHTML (
+                target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'jenkinsReport',
+                    reportFiles: 'index.html',
+                    reportName: "Coverage Report"
+                ]
+            )
+        }
         cleanup {
-            // clean up the workspace
+            // Clean up the workspace.
             deleteDir()
         }
     }

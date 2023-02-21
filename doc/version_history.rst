@@ -6,6 +6,15 @@
 Version History
 ===============
 
+v4.3.0
+------
+
+* Add ``TelescopeVignetted`` enum class to `enums.ATDomeTrajectory` and `enums.MTDomeTrajectory`.
+* `enums.MTDome.MotionState`: add ``DISABLED`` value.
+* Add missing setup.cfg.
+* pre-commit: update black to 23.1.0, isort to 5.12.0, mypy to 1.0.0, and pre-commit-hooks to v4.4.0.
+* ``Jenkinsfile``: modernize do not run as root.
+
 v4.2.0
 ------
 

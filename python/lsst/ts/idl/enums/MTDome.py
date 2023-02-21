@@ -124,6 +124,7 @@ class MotionState(enum.IntEnum):
     STARTING_MOTOR_COOLING = enum.auto()
     STOPPING_MOTOR_COOLING = enum.auto()
     UNDETERMINED = enum.auto()
+    DISABLED = enum.auto()
 
 
 class OperationalMode(enum.IntEnum):
