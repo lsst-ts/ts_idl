@@ -125,6 +125,8 @@ class PowerState(enum.IntEnum):
 
 
 class System(enum.IntEnum):
+    """Subsystem ID: the subsystem field in error and warning events."""
+
     AZIMUTH = 0
     ELEVATION = 1
     CAMERA_CABLE_WRAP = 2
@@ -142,3 +144,11 @@ class System(enum.IntEnum):
     MAIN_CABINET_THERMAL = 14
     MAIN_AXES_POWER_SUPPLY = 15
     TOP_END_CHILLER = 16
+
+
+class ThermalCommandState(enum.IntEnum):
+    """State for the setThermal command."""
+
+    NO_CHANGE = 0
+    OFF = 1
+    ON = 2
