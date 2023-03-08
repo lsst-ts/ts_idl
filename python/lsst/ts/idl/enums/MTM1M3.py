@@ -18,7 +18,13 @@
 #
 # You should have received a copy of the GNU General Public License
 
-__all__ = ["DetailedState", "HardpointActuatorMotionStates"]
+__all__ = [
+    "DetailedState",
+    "BumpTest",
+    "HardpointActuatorMotionStates",
+    "HardpointTest",
+    "ILCState",
+]
 
 import enum
 
@@ -66,3 +72,11 @@ class HardpointTest(enum.IntEnum):
     MOVINGREFERENCE = 5
     PASSED = 6
     FAILED = 7
+
+
+class ILCState(enum.IntEnum):
+    STANDBY = 0
+    DISABLED = 1
+    ENABLED = 2
+    FIRMWAREUPDATE = 3
+    FAULT = 4
