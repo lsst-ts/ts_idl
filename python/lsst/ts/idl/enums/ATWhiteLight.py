@@ -23,7 +23,6 @@ __all__ = [
     "ChillerL21Alarms",
     "ChillerL22Alarms",
     "ChillerWarnings",
-    "ErrorCode",
     "LampBasicState",
     "LampControllerError",
     "LampControllerState",
@@ -201,16 +200,6 @@ class ChillerWarnings(enum.IntFlag):
     LOW_CONTROL_TEMP = 0x20
     HIGH_AMBIENT_TEMP = 0x40
     LOW_AMBIENT_TEMP = 0x80
-
-
-class ErrorCode(enum.IntEnum):
-    """CSC fault state error codes."""
-
-    CHILLER_DISCONNECTED = 1
-    LAMP_DISCONNECTED = 2
-    LAMP_ERROR = 3
-    CHILLER_ERROR = 4
-    NOT_CHILLING_WITH_LAMP_ON = 5
 
 
 class LampBasicState(enum.IntEnum):
