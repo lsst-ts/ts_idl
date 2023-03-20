@@ -6,6 +6,12 @@
 Version History
 ===============
 
+v4.4.0
+------
+
+* `enums.ATWhiteLight`: expand ``BasicState`` values.
+  Also remove ``ErrorCode`` enum: use the version in ts_atwhitelight instead.
+
 v4.3.0
 ------
 

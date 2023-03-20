@@ -23,7 +23,6 @@ __all__ = [
     "ChillerL21Alarms",
     "ChillerL22Alarms",
     "ChillerWarnings",
-    "ErrorCode",
     "LampBasicState",
     "LampControllerError",
     "LampControllerState",
@@ -203,16 +202,6 @@ class ChillerWarnings(enum.IntFlag):
     LOW_AMBIENT_TEMP = 0x80
 
 
-class ErrorCode(enum.IntEnum):
-    """CSC fault state error codes."""
-
-    CHILLER_DISCONNECTED = 1
-    LAMP_DISCONNECTED = 2
-    LAMP_ERROR = 3
-    CHILLER_ERROR = 4
-    NOT_CHILLING_WITH_LAMP_ON = 5
-
-
 class LampBasicState(enum.IntEnum):
     """Lamp basic state.
 
@@ -228,6 +217,18 @@ class LampBasicState(enum.IntEnum):
       but not fully warmed up.
       You cannot turn the lamp off unless you specify force=True,
       which will shorten bulb life.
+    * TURNING_ON: lamp has been turned off for less than
+      configured max_lamp_on_delay seconds and light is not detected.
+      This is a normal phase of turning on the lamp.
+    * TURNING_OFF: lamp has been turned off for less than
+      configured max_lamp_off_delay seconds and light is still detected.
+      This is a normal phase of turning off the lamp.
+    * UNEXPECTEDLY_ON: lamp has been turned off for more than
+      configured max_lamp_off_delay seconds and light is still detected.
+      This is very bad: the lamp controller is probably stuck on.
+    * UNEXPECTEDLY_OFF: lamp has been turned on for more than
+      configured max_lamp_on_delay seconds and light is not detected.
+      This is bad: the lamp probably burned out or failed to turn on.
     """
 
     UNKNOWN = 0
@@ -235,6 +236,10 @@ class LampBasicState(enum.IntEnum):
     ON = enum.auto()
     COOLDOWN = enum.auto()
     WARMUP = enum.auto()
+    TURNING_ON = enum.auto()
+    TURNING_OFF = enum.auto()
+    UNEXPECTEDLY_ON = enum.auto()
+    UNEXPECTEDLY_OFF = enum.auto()
 
 
 class LampControllerError(enum.IntEnum):
