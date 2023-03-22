@@ -19,7 +19,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-__all__ = ["DeviceId", "DEVICE_GROUPS", "DEVICE_GROUP_IDS"]
+__all__ = [
+    "DeviceId",
+    "DynaleneSafetyState",
+    "DynaleneState",
+    "DEVICE_GROUPS",
+    "DEVICE_GROUP_IDS",
+]
 
 from enum import IntEnum
 
@@ -28,6 +34,7 @@ class DeviceId(IntEnum):
     bombaAguaFriaP01 = 1
     generalP01 = 2
     valvulaP01 = 3
+    dynaleneP05 = 4
     chiller01P01 = 101
     chiller02P01 = 102
     chiller03P01 = 103
@@ -67,6 +74,37 @@ class DeviceId(IntEnum):
     vin01P01 = 703
     vex03LowerP04 = 801
     vex04CargaP04 = 802
+
+
+class DynaleneSafetyState(IntEnum):
+    TmaAlarm = 1
+    TmaAlarmCMD = 2
+    TmaAlarmMonitorON = 3
+    TmaAlarmMonitorOFF = 4
+    TaAlarm = 5
+    TaAlarmCMD = 6
+    TaAlarmMonitorON = 7
+    TaAlarmMonitorOFF = 8
+    MainGridAlarm = 9
+    MainGridAlarmCMD = 10
+    MAinGRidFailureFlag = 11
+    TankLevelAlarm = 12
+    TankLevelWarning = 13
+    TankLevelOK = 14
+    TankLevelAlarmCMD = 15
+    SafetyResetFlag = 16
+
+
+class DynaleneState(IntEnum):
+    Initialized = 0
+    ShuttingDown = 1
+    PoweringOn = 2
+    PoweredOn = 3
+    PoweringOff = 4
+    PoweredOff = 5
+    Warning = 6
+    Alarm = 7
+    ShutOff = 8
 
 
 # Dict of index: DeviceId, where index is the index of the device in DeviceId.
