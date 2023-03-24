@@ -213,6 +213,9 @@ class LampBasicState(enum.IntEnum):
       You can adjust its power and turn it off.
     * COOLDOWN: lamp is off but cannot be turned back on yet.
       The chiller must remain operating.
+      This is solely based on a timer internal to the CSC; that timer
+      is typically longer than the lamp controller's cooldown phase,
+      which is described in LampControllerState.
     * WARMUP: lamp is fully ignited (so you can set power)
       but not fully warmed up.
       You cannot turn the lamp off unless you specify force=True,
