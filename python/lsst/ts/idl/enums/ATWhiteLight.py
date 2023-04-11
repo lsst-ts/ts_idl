@@ -207,6 +207,7 @@ class LampBasicState(enum.IntEnum):
 
     Meanings:
 
+    * UNKNOWN: no connection to the lamp controller and not COOLDOWN.
     * OFF: lamp is off and fully cooled down.
       You can turn it on again or turn off the chiller.
     * ON: lamp is on and fully ignited and warmed up.
@@ -216,8 +217,7 @@ class LampBasicState(enum.IntEnum):
       This is solely based on a timer internal to the CSC; that timer
       is typically longer than the lamp controller's cooldown phase,
       which is described in LampControllerState.
-    * WARMUP: lamp is fully ignited (so you can set power)
-      but not fully warmed up.
+    * WARMUP: lamp is on, but not fully warmed up.
       You cannot turn the lamp off unless you specify force=True,
       which will shorten bulb life.
     * TURNING_ON: lamp has been turned off for less than
@@ -235,14 +235,14 @@ class LampBasicState(enum.IntEnum):
     """
 
     UNKNOWN = 0
-    OFF = enum.auto()
-    ON = enum.auto()
-    COOLDOWN = enum.auto()
-    WARMUP = enum.auto()
-    TURNING_ON = enum.auto()
-    TURNING_OFF = enum.auto()
-    UNEXPECTEDLY_ON = enum.auto()
-    UNEXPECTEDLY_OFF = enum.auto()
+    OFF = 1
+    ON = 2
+    COOLDOWN = 3
+    WARMUP = 4
+    TURNING_ON = 5
+    TURNING_OFF = 6
+    UNEXPECTEDLY_ON = 7
+    UNEXPECTEDLY_OFF = 8
 
 
 class LampControllerError(enum.IntEnum):
@@ -272,27 +272,25 @@ class LampControllerState(enum.IntEnum):
 
     Values:
 
-    * OFF: The lamp controller appears to be powered off (though it might
-      also be disconnected from the LabJack).
-      None of the status signals is high.
-    * STANDBY_OR_ON: Either the lamp is on, or it has been off long enough
-      that the lamp controller's short COOLDOWN phase is over.
-      The main LED is green.
-    * COOLDOWN: The lamp was recently turned off and the lamp controller
-      is cooling down. This is different than the CSC's cooldown phase,
-      whose duration is set by config.lamp.cooldown_period. The lamp
-      controller's cooldown phase is not configurable, but it is typically
-      much shorter than the CSC's cooldown phase.
-      The main LED is blue.
+    * UNKNOWN: Not connected to the lamp controller or the lamp controller
+      is powered off.
+    * STANDBY: The lamp is commanded to be off and the main LED is green.
+    * ON: The lamp is commanded to be on and the main LED is green.
+    * COOLDOWN: The main LED is blue. The lamp was recently turned off and
+      the lamp controller is cooling down. This is different than the CSC's
+      cooldown phase, whose duration is set by config.lamp.cooldown_period.
+      The lamp controller's cooldown phase is not configurable, but it is
+      typically much shorter than the CSC's cooldown phase. It indicates
+      that a fan is running.
     * ERROR: The lamp controller is reporting an error.
       The main LED is red and the error LED should be flashing.
     """
 
     UNKNOWN = 0
-    OFF = enum.auto()
-    STANDBY_OR_ON = enum.auto()
-    COOLDOWN = enum.auto()
-    ERROR = enum.auto()
+    STANDBY = 1
+    ON = 2
+    COOLDOWN = 3
+    ERROR = 4
 
 
 class ShutterState(enum.IntEnum):
