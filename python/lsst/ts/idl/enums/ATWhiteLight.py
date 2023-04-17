@@ -274,8 +274,9 @@ class LampControllerState(enum.IntEnum):
 
     * UNKNOWN: Not connected to the lamp controller or the lamp controller
       is powered off.
-    * STANDBY: The lamp is commanded to be off and the main LED is green.
-    * ON: The lamp is commanded to be on and the main LED is green.
+    * STANDBY_OR_ON: Either the lamp is on, or it has been off long enough
+      that the lamp controller's short COOLDOWN phase is over.
+      The main LED is green.
     * COOLDOWN: The main LED is blue. The lamp was recently turned off and
       the lamp controller is cooling down. This is different than the CSC's
       cooldown phase, whose duration is set by config.lamp.cooldown_period.
@@ -287,10 +288,9 @@ class LampControllerState(enum.IntEnum):
     """
 
     UNKNOWN = 0
-    STANDBY = 1
-    ON = 2
-    COOLDOWN = 3
-    ERROR = 4
+    STANDBY_OR_ON = 1
+    COOLDOWN = 2
+    ERROR = 3
 
 
 class ShutterState(enum.IntEnum):
