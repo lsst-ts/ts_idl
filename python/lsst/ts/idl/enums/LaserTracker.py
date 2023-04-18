@@ -28,3 +28,17 @@ class SalIndex(enum.IntEnum):
 
     MTAlignment = 1
     OTHER = 2
+
+
+class LaserStatus(enum.IntEnum):
+    NOT_CONNECTED = enum.auto()
+    OFF = enum.auto()
+    WARMING = enum.auto()
+    ON = enum.auto()
+
+
+class T2SAStatus(enum.IntEnum):
+    READY = enum.auto()
+    TWO_FACE = enum.auto()
+    DRIFT = enum.auto()
+    BUSY = enum.auto()
