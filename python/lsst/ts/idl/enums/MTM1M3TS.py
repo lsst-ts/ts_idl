@@ -1,6 +1,6 @@
 # This file is part of ts_idl.
 #
-# Developed for Vera Rubin Observatory.
+# Developed for the LSST Telescope & Site.
 # This product includes software developed by the LSST Project
 # (https://www.lsst.org).
 # See the COPYRIGHT file at the top-level directory of this distribution
@@ -18,36 +18,14 @@
 #
 # You should have received a copy of the GNU General Public License
 
-from . import (
-    ATMCS,
-    MTAOS,
-    MTM1M3,
-    MTM2,
-    PMD,
-    ATCamera,
-    ATDome,
-    ATDomeTrajectory,
-    ATHexapod,
-    ATMonochromator,
-    ATPneumatics,
-    ATPtg,
-    ATSpectrograph,
-    ATThermoelectricCooler,
-    ATWhiteLight,
-    Electrometer,
-    FiberSpectrograph,
-    Guider,
-    LaserTracker,
-    LinearStage,
-    MTDome,
-    MTDomeTrajectory,
-    MTHexapod,
-    MTMount,
-    MTPtg,
-    MTRotator,
-    Scheduler,
-    Script,
-    ScriptQueue,
-    TunableLaser,
-    Watcher,
-)
+__all__ = ["ILCState"]
+
+import enum
+
+
+class ILCState(enum.IntEnum):
+    STANDBY = 0
+    DISABLED = 1
+    ENABLED = 2
+    FIRMWAREUPDATE = 3
+    FAULT = 4

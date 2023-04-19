@@ -72,6 +72,9 @@ class Wraps(enum.IntEnum):
 class CoordFrame(enum.IntEnum):
     FK5 = 1
     ICRS = 2
+    AZEL = 3
+    PLANET = 4
+    EPHEM = 5
 
 
 class RotFrame(enum.IntEnum):

@@ -6,6 +6,22 @@
 Version History
 ===============
 
+v4.5.0
+------
+
+* `enums.MTMount`:
+
+    * Add ``ThermalCommandState``.
+    * ``System``: rename two thermal system items, leaving deprecated aliases.
+
+v4.4.0
+------
+
+* `enums.ATWhiteLight`: expand ``BasicState`` values.
+  Also remove ``ErrorCode`` enum: use the version in ts_atwhitelight instead.
+* HVAC: Add Dynalene DeviceId, DynaleneSafetyState and DynaleneState.
+* Apply isort.
+
 v4.3.0
 ------
 

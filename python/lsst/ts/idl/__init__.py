@@ -24,5 +24,5 @@ try:
 except ImportError:
     __version__ = "?"
 
-from .utils import *
 from . import enums
+from .utils import *

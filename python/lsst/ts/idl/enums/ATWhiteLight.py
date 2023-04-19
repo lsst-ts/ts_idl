@@ -23,7 +23,6 @@ __all__ = [
     "ChillerL21Alarms",
     "ChillerL22Alarms",
     "ChillerWarnings",
-    "ErrorCode",
     "LampBasicState",
     "LampControllerError",
     "LampControllerState",
@@ -203,38 +202,47 @@ class ChillerWarnings(enum.IntFlag):
     LOW_AMBIENT_TEMP = 0x80
 
 
-class ErrorCode(enum.IntEnum):
-    """CSC fault state error codes."""
-
-    CHILLER_DISCONNECTED = 1
-    LAMP_DISCONNECTED = 2
-    LAMP_ERROR = 3
-    CHILLER_ERROR = 4
-    NOT_CHILLING_WITH_LAMP_ON = 5
-
-
 class LampBasicState(enum.IntEnum):
     """Lamp basic state.
 
     Meanings:
 
+    * UNKNOWN: no connection to the lamp controller and not COOLDOWN.
     * OFF: lamp is off and fully cooled down.
       You can turn it on again or turn off the chiller.
     * ON: lamp is on and fully ignited and warmed up.
       You can adjust its power and turn it off.
     * COOLDOWN: lamp is off but cannot be turned back on yet.
       The chiller must remain operating.
-    * WARMUP: lamp is fully ignited (so you can set power)
-      but not fully warmed up.
+      This is solely based on a timer internal to the CSC; that timer
+      is typically longer than the lamp controller's cooldown phase,
+      which is described in LampControllerState.
+    * WARMUP: lamp is on, but not fully warmed up.
       You cannot turn the lamp off unless you specify force=True,
       which will shorten bulb life.
+    * TURNING_ON: lamp has been turned off for less than
+      configured max_lamp_on_delay seconds and light is not detected.
+      This is a normal phase of turning on the lamp.
+    * TURNING_OFF: lamp has been turned off for less than
+      configured max_lamp_off_delay seconds and light is still detected.
+      This is a normal phase of turning off the lamp.
+    * UNEXPECTEDLY_ON: lamp has been turned off for more than
+      configured max_lamp_off_delay seconds and light is still detected.
+      This is very bad: the lamp controller is probably stuck on.
+    * UNEXPECTEDLY_OFF: lamp has been turned on for more than
+      configured max_lamp_on_delay seconds and light is not detected.
+      This is bad: the lamp probably burned out or failed to turn on.
     """
 
     UNKNOWN = 0
-    OFF = enum.auto()
-    ON = enum.auto()
-    COOLDOWN = enum.auto()
-    WARMUP = enum.auto()
+    OFF = 1
+    ON = 2
+    COOLDOWN = 3
+    WARMUP = 4
+    TURNING_ON = 5
+    TURNING_OFF = 6
+    UNEXPECTEDLY_ON = 7
+    UNEXPECTEDLY_OFF = 8
 
 
 class LampControllerError(enum.IntEnum):
@@ -264,27 +272,25 @@ class LampControllerState(enum.IntEnum):
 
     Values:
 
-    * OFF: The lamp controller appears to be powered off (though it might
-      also be disconnected from the LabJack).
-      None of the status signals is high.
+    * UNKNOWN: Not connected to the lamp controller or the lamp controller
+      is powered off.
     * STANDBY_OR_ON: Either the lamp is on, or it has been off long enough
       that the lamp controller's short COOLDOWN phase is over.
       The main LED is green.
-    * COOLDOWN: The lamp was recently turned off and the lamp controller
-      is cooling down. This is different than the CSC's cooldown phase,
-      whose duration is set by config.lamp.cooldown_period. The lamp
-      controller's cooldown phase is not configurable, but it is typically
-      much shorter than the CSC's cooldown phase.
-      The main LED is blue.
+    * COOLDOWN: The main LED is blue. The lamp was recently turned off and
+      the lamp controller is cooling down. This is different than the CSC's
+      cooldown phase, whose duration is set by config.lamp.cooldown_period.
+      The lamp controller's cooldown phase is not configurable, but it is
+      typically much shorter than the CSC's cooldown phase. It indicates
+      that a fan is running.
     * ERROR: The lamp controller is reporting an error.
       The main LED is red and the error LED should be flashing.
     """
 
     UNKNOWN = 0
-    OFF = enum.auto()
-    STANDBY_OR_ON = enum.auto()
-    COOLDOWN = enum.auto()
-    ERROR = enum.auto()
+    STANDBY_OR_ON = 1
+    COOLDOWN = 2
+    ERROR = 3
 
 
 class ShutterState(enum.IntEnum):
