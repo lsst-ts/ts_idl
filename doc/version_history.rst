@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v4.6.0
+------
+
+* Add ``AlignComponent`` enum class to `enums.LaserTracker`.
+
 v4.5.0
 ------
 
