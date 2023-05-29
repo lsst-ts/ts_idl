@@ -6,11 +6,6 @@
 Version History
 ===============
 
-v4.6.0
-------
-
-* Add ``AlignComponent`` enum class to `enums.LaserTracker`.
-
 v4.5.0
 ------
 
@@ -18,6 +13,12 @@ v4.5.0
 
     * Add ``ThermalCommandState``.
     * ``System``: rename two thermal system items, leaving deprecated aliases.
+
+* Add ``AlignComponent`` enum class to `enums.LaserTracker`.
+* `enums.HVAC`:
+
+    * Remove ``DynaleneSafetyState``.
+    * Add ``DynaleneTankLevel``.
 
 v4.4.0
 ------
