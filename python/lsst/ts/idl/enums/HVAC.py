@@ -21,8 +21,8 @@
 
 __all__ = [
     "DeviceId",
-    "DynaleneSafetyState",
     "DynaleneState",
+    "DynaleneTankLevel",
     "DEVICE_GROUPS",
     "DEVICE_GROUP_IDS",
 ]
@@ -76,26 +76,9 @@ class DeviceId(IntEnum):
     vex04CargaP04 = 802
 
 
-class DynaleneSafetyState(IntEnum):
-    TmaAlarm = 1
-    TmaAlarmCMD = 2
-    TmaAlarmMonitorON = 3
-    TmaAlarmMonitorOFF = 4
-    TaAlarm = 5
-    TaAlarmCMD = 6
-    TaAlarmMonitorON = 7
-    TaAlarmMonitorOFF = 8
-    MainGridAlarm = 9
-    MainGridAlarmCMD = 10
-    MAinGRidFailureFlag = 11
-    TankLevelAlarm = 12
-    TankLevelWarning = 13
-    TankLevelOK = 14
-    TankLevelAlarmCMD = 15
-    SafetyResetFlag = 16
-
-
 class DynaleneState(IntEnum):
+    """Dynalene state."""
+
     Initialized = 0
     ShuttingDown = 1
     PoweringOn = 2
@@ -105,6 +88,14 @@ class DynaleneState(IntEnum):
     Warning = 6
     Alarm = 7
     ShutOff = 8
+
+
+class DynaleneTankLevel(IntEnum):
+    """Dynalene Tank Level alarm state."""
+
+    OK = 0
+    Warning = 1
+    Alarm = 2
 
 
 # Dict of index: DeviceId, where index is the index of the device in DeviceId.

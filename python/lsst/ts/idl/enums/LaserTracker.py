@@ -37,6 +37,11 @@ class LaserStatus(enum.IntEnum):
     ON = enum.auto()
 
 
+class AlignComponent(enum.IntEnum):
+    M2 = enum.auto()
+    Camera = enum.auto()
+
+
 class T2SAStatus(enum.IntEnum):
     READY = enum.auto()
     TWO_FACE = enum.auto()
