@@ -80,3 +80,14 @@ class ILCState(enum.IntEnum):
     ENABLED = 2
     FIRMWAREUPDATE = 3
     FAULT = 4
+
+
+class EnableDisableForceComponent(enum.IntEnum):
+    ACCELERATIONFORCE = 1
+    ACTIVEOPTICFORCE = 2
+    AZIMUTHFORCE = 3
+    BALANCEFORCE = 4
+    OFFSETFORCE = 5
+    STATICFORCE = 6
+    THERMALFORCE = 7
+    VELOCITYFORCE = 8
