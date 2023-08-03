@@ -6,6 +6,11 @@
 Version History
 ===============
 
+v4.8.0
+------
+
+* MTM2: Add the enums: ``PowerType``, ``PowerSystemState``, ``ClosedLoopControlMode``, and ``InnerLoopControlMode``.
+
 v4.7.0
 ------
 
