@@ -10,25 +10,18 @@ build:
   noarch: python
   skip: False #[win]
   string: {{ TS_XML_VERSION }}_{{ TS_SAL_VERSION }}
-  script_env:
-    - PATH
-    - PYTHONPATH
-    - LD_LIBRARY_PATH
-    - LSST_SDK_INSTALL
-    - OSPL_HOME
-    - LSST_DDS_DOMAIN
-    - PYTHON_BUILD_VERSION
-    - PYTHON_BUILD_LOCATION
-    - TS_SAL_VERSION
-    - TS_XML_VERSION
 
 requirements:
   host:
-    - python
+    - python {{ python }}
     - pip
     - setuptools_scm
     - setuptools
+  build:
+    - python {{ python }}
+    - setuptools_scm
+    - setuptools
   run:
-    - python
+    - python {{ python }}
     - setuptools
     - setuptools_scm
