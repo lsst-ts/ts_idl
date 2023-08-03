@@ -6,6 +6,17 @@
 Version History
 ===============
 
+v4.7.0
+------
+
+* Switch to ts-pre-commit-config.
+* HVAC: Add Dynalene enum items.
+
+v4.6.0
+------
+
+* MTM1M3: Add EnableDisableForceComponent enum.
+
 v4.5.0
 ------
 
