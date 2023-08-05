@@ -12,6 +12,7 @@ v4.7.0
 * Switch to ts-pre-commit-config.
 * HVAC: Add Dynalene enum items.
 * MTM2: Add the enums: ``PowerType``, ``PowerSystemState``, ``ClosedLoopControlMode``, and ``InnerLoopControlMode``.
+* Fix conda build script.
 
 v4.6.0
 ------
