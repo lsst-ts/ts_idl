@@ -13,15 +13,15 @@ build:
 
 requirements:
   host:
-    - python {{ python }}
+    - python
     - pip
     - setuptools_scm
     - setuptools
   build:
-    - python {{ python }}
+    - python
     - setuptools_scm
     - setuptools
   run:
-    - python {{ python }}
+    - python
     - setuptools
     - setuptools_scm
