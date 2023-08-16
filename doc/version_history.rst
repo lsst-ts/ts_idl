@@ -6,6 +6,20 @@
 Version History
 ===============
 
+v4.7.0
+------
+
+* Switch to ts-pre-commit-config.
+* Remove dependency on the python version from the conda recipe.
+* HVAC: Add Dynalene enum items.
+* MTM2: Add the enums: ``PowerType``, ``PowerSystemState``, ``ClosedLoopControlMode``, and ``InnerLoopControlMode``.
+* Fix conda build script.
+
+v4.6.0
+------
+
+* MTM1M3: Add EnableDisableForceComponent enum.
+
 v4.5.0
 ------
 
