@@ -17,37 +17,19 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from . import (
-    ATMCS,
-    MTAOS,
-    MTM1M3,
-    MTM2,
-    PMD,
-    ATCamera,
-    ATDome,
-    ATDomeTrajectory,
-    ATHexapod,
-    ATMonochromator,
-    ATPneumatics,
-    ATPtg,
-    ATSpectrograph,
-    ATThermoelectricCooler,
-    ATWhiteLight,
-    Electrometer,
-    FiberSpectrograph,
-    Guider,
-    LaserTracker,
-    LinearStage,
-    MTDome,
-    MTDomeTrajectory,
-    MTHexapod,
-    MTMount,
-    MTPtg,
-    MTRotator,
-    Scheduler,
-    Script,
-    ScriptQueue,
-    TunableLaser,
-    Watcher,
+import warnings
+
+warnings.warn(
+    """
+    ts_idl package is going to be deprecated once we upgrade to salobj 8 (the
+    initial release of the kafka version of salobj). The enumerations will move
+    to ts_xml package. For now they will continue to be re-exported here but
+    you should start moving your imports to use lsst.ts.xml instead of
+    lsst.ts.idl.
+    """,
+    DeprecationWarning,
 )
+
+from lsst.ts.xml.enums import *
