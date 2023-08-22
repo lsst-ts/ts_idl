@@ -1,6 +1,1 @@
-import enum
-
-
-class DetailedState(enum.IntEnum):
-    NOTMOVINGSTATE = 1
-    MOVINGSTATE = 2
+from lsst.ts.xml.enums.LinearStage import *  # noqa: F403 F401

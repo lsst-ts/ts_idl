@@ -1,6 +1,1 @@
-import enum
-
-
-class DetailedState(enum.IntEnum):
-    INMOTION = 1
-    NOTINMOTION = 2
+from lsst.ts.xml.enums.ATHexapod import *  # noqa: F403 F401
