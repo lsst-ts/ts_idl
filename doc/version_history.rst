@@ -18,6 +18,7 @@ v4.7.1
 * Remove all enums definitions.
   These are now moved into ts-xml package.
 * Re-export all enums from ts-xml for backward compatibility.
+* Add ts-xml as a host and run dependency.
 * Add deprecation warning.
 
 v4.7.0
