@@ -17,6 +17,7 @@ requirements:
     - pip
     - setuptools_scm
     - setuptools
+    - ts-xml >19
   build:
     - python
     - setuptools_scm
@@ -25,3 +26,4 @@ requirements:
     - python
     - setuptools
     - setuptools_scm
+    - ts-xml >19
