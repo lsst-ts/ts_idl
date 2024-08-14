@@ -1,5 +1,7 @@
 IDL files for use by ts_salobj, and Python enum files generated from XML.
 
+**Deprecation Notice:** This package is going to be deprecated, enums were moved to ts-xml
+
 Contents:
 
 * idl: IDL files. There should be one file for each SAL component you want to communication with using ``ts_salobj``.
